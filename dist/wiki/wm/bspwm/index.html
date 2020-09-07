@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Ctlos Bspwm - Killer-OS Linux</title><meta name="gridsome:hash" content="8cdcb24eb6b965aabc424dc02a3705a76aba031a"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.20"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="og:url" name="og:url" content="undefined/wiki/other/screencast/"><meta data-vue-tag="ssr" name="description" content="Описание конфигурации Ctlos Linux Bspwm, горячие клавиши, утилиты."><meta data-vue-tag="ssr" data-key="og:title" name="og:title" content="Ctlos Bspwm"><meta data-vue-tag="ssr" data-key="twitter:title" name="twitter:title" content="Ctlos Bspwm"><meta data-vue-tag="ssr" data-key="og:description" name="og:description" content="Описание конфигурации Ctlos Linux Bspwm, горячие клавиши, утилиты."><meta data-vue-tag="ssr" data-key="twitter:description" name="twitter:description" content="Описание конфигурации Ctlos Linux Bspwm, горячие клавиши, утилиты."><meta data-vue-tag="ssr" data-key="og:type" name="og:type" content="website"><meta data-vue-tag="ssr" data-key="twitter:card" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" data-key="og:image" name="og:image" content="undefined/img/post.png"><meta data-vue-tag="ssr" data-key="twitter:image" name="twitter:image" content="undefined/img/post.png"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.183530a35285eafbfb6a4f56cbff909b.png"><link rel="preload" href="/assets/css/0.styles.a0db5c52.css" as="style"><link rel="preload" href="/assets/js/app.fc5ae4d7.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--markdown-page-vue.9aa160b7.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.c210b097.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.a29e8ef5.js"><link rel="prefetch" href="/assets/js/page--src--templates--md-page-vue.9d96d72b.js"><link rel="prefetch" href="/assets/js/search.5aebddfd.js"><link rel="prefetch" href="/assets/js/vue-remark--mdpages--donat-md.e133bbea.js"><link rel="prefetch" href="/assets/js/vue-remark--mdpages--get-md.4d3fa1d8.js"><link rel="stylesheet" href="/assets/css/0.styles.a0db5c52.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: light)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true" class="font-sans antialiased text-ui-typo bg-ui-background"><div class="flex flex-col justify-start min-h-screen"><header class="sticky top-0 z-10 w-full border-b border-ui-border"><div class="border-t-2 border-ui-primary"><div class="container"><div class="flex items-center justify-between -mx-2 sm:-mx-4"><div class="flex items-center px-2 sm:px-4"><a href="/" title="Killer-OS Linux" class="flex items-center text-ui-primary active"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 36 36" version="1.1" class="text-ui-primary"><defs><image id="image15" width="36" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAABnUlEQVRYhd2X207CQBCGv2KBUkWDF77/04lEjCJI5dR6MbsWELrbZrYQJ2matJOZL3/n0IUrsxulOB2tWFpAfSA28XKgaBqoowSUmvsdAhY1DaQFNABWCNjgGoD6BuIbUal7aSBbi68IUL9pbC2gyFw5kFHW0sWA9u0ZuKehSiGANsAauKXBWAkBBDBGVOpRs+NCAWXIcKytUigggAkwpKZKIYE+kU5L6+QJCQTwRk2VQgNNgQRZJ165QgMBvCMqea2TNoAmSB0lPvnaACqAOZ7rpA0gkEE5xEOltoB2lEu3clBqAeUePlYl++8UFGiNtHaVrYAtjlrSAsqAJw8/59LVAlqaWC6VluaecqaWtI5BNtYI+HD4bYFH4Asp9gPTUmhnEiTI56iyGQJ/culqKWQPhjFSIzOHf2T8Mo5U0pxDW2CB/JS54k6R9v8zKDVryKrUQz7H3OHfRZrgQCXtSb0xIA8evi+Imsn+Q02FrBUmSUzZ5ufMNsGvmtoKFZQqjTz8xxxN7UanS4flyAgYGKgdp6dyYd4tAjD8Y/sB8vhDm6MZoIAAAAAASUVORK5CYII="></image><linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="399.34" y1="154.86" x2="277.87" y2="154.86" gradientTransform="matrix(0.05625,0,0,0.05625,0,0)"><stop offset="0" style="stop-color:rgb(25.098039%,47.45098%,98.039216%);stop-opacity:1;"></stop><stop offset="1" style="stop-color:rgb(10.588235%,17.647059%,33.72549%);stop-opacity:1;"></stop><stop offset="1" style="stop-color:rgb(0.392157%,0%,0%);stop-opacity:1;"></stop></linearGradient><image id="image28" width="36" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAABmUlEQVRYhe3Xy24TQRCF4c9jO1cCBgzsWES8/xtxUQApIEwUAuKmEBblBssKmR67mgXiSLMaTfWvM6o61fyD6jDJLLaNxtjDfgILtgeaYpZQ55e2KdThAHN8zMHZDmiKu/iKyxyczYFW3TnJgimFN9EEd/ANn/NwNgMaia56gGeZMGwGVNy5wnkuznCg4s4cL7NhGA40xpHosDf5OMOARmIqz/G6BQzDgIo7B3jVBmcY0A7u4bQRC+qBxrgluutFMxr1QMWdhWj3ZqoB6nC4BEofhNcd1qcSouf43hanH6i4cx9PW8OUA29SWcC+LJ/mugmo8zsm/oo75dA/qYToJS566sxaA63GxPOKOsetgSa4LQbi+54ahxpfg1bdqVlPn4iB2QyohOi+/tzaEWF71gpohF0xd2pWjOJO2l69DlRC9Ej/7+pEF56JZb8J0FS487bi22MRJ580upcVd2bqQvSh6MA0d9aBSkws8KPnu8diWF5IdOc6oD117jzCO3GNTt2P1gfaQrTxVHTcuq6W7z4sn1R3/qtGPwGruDu2AGSgXgAAAABJRU5ErkJggg=="></image><image id="image41" width="36" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAABJElEQVRYhe2V0U7CQBBFz7ZFEKH6Bf7/n4GQGJAYFaH4MDMJD6Tt7BKf5iSEsrNZTu9upxAEQRAEQRAEQQnpDmtUQK3XnX4uuYvVw1MGZWbAIzDR3+cSoapQaAIs9TsBLfBAQfIlQpbOC/AB7IFnHctet0SoAZ6AE/CDbNMXsNDavwpZOi2wvhpfqVB2SrlCls4Z+LwaPwK/WstKKUeoAqbIYV7fqK+0NiXjcOcI1UgCAIcbdUtsTkZKXqGE3HkLbHrmbZGU3C3AK2RnpwJ2PfPede4cZ/P1CCXkjpf0p2PskCfOmubdhexRT0gCQ7ypjOtwe+JskHfWHmmEYzARa5yj/sTDCdm2V/q34oL0pG/k7T8aj1CHNL2ZyjQDQh2yzUeP0B87zSuAvgztPQAAAABJRU5ErkJggg=="></image></defs><g id="surface1"><use xlink:href="#image15"></use><path d="M 18.066406 22.226562 L 23.355469 33.828125 L 32.621094 33.828125 L 18.066406 2.195312 Z M 18.066406 22.226562 " style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);"></path><use xlink:href="#image28"></use><path d="M 12.632812 33.828125 L 3.371094 33.828125 L 18.066406 2.195312 L 18.066406 22.011719 Z M 12.632812 33.828125 " style=" stroke:none;fill-rule:nonzero;fill:rgb(25.098039%,47.45098%,98.039216%);fill-opacity:1;"></path><use xlink:href="#image41"></use><path d="M 426.111111 612.222222 L 210.694444 612.222222 L 321.666667 380.069444 Z M 426.111111 612.222222 " transform="matrix(0.05625,0,0,0.05625,0,0)" style="fill-rule:nonzero;fill:rgb(60.784314%,68.235294%,78.431373%);fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;"></path></g></svg></a></div><div class="flex items-center hidden md:flex"><a href="/wiki" title="Wiki" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary active">
+          Wiki
+        </a><a href="/wiki/changelog" title="Changelog" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          Changelog
+        </a><a href="/wiki/whois" title="About" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          About
+        </a><a href="/donat" title="Apoyo" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          Apoyo
+        </a><a href="/get" title="Descargar" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          Descargar
+        </a></div><div class="drop-menu flex items-center block md:hidden"><div class="has-dropdown p-4 cursor-pointer"><span rel="noopener noreferrer" target="_blank" class="font-medium nav-link text-ui-typo hover:text-ui-primary">MENU</span><div class="dropdown flex flex-col"><a href="/wiki" title="Wiki" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary active">
+              Wiki
+            </a><a href="/wiki/changelog" title="Changelog" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              Changelog
+            </a><a href="/wiki/whois" title="About" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              About
+            </a><a href="/donat" title="Apoyo" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              Apoyo
+            </a><a href="/get" title="Descargar" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              Descargar
+            </a></div></div></div><div class="w-full px-2 sm:px-4"><!----></div><div class="flex items-center px-2 sm:px-4"><div class="drop-web"><div class="has-dropdown py-4 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><div class="dropdown flex flex-col"><a href="https://t.me/Killer_OS_Info" rel="noopener noreferrer" target="_blank">
+                Telegram
+              </a><a href="https://github.com/Killer-OS-Oficial/Killer-OS-Oficial.github.io" rel="noopener noreferrer" target="_blank">
+                Repositorio del Sitio
+              </a></div></div></div><button role="button" aria-label="Toggle dark/light" class="toggle-theme ml-2 sm:ml-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></div></div></header><main class="container relative flex flex-wrap justify-start flex-1 w-full bg-ui-background"><!----><div class="w-full pb-24"><div class="flex flex-wrap items-start justify-start"><div class="sidebar-content order-2 w-full md:w-1/4 sm:pl-4 md:pl-6 lg:pl-8 sticky overflow-y-auto overflow-x-hidden" style="top:4rem;height:calc(100vh - 4rem);"><div class="mt-8 sm:pl-4 md:pl-6 md:pt-12 lg:pl-8 sm:pb-16 sm:border-l border-ui-border md:mt-0"><h3 class="pt-0 mt-0 text-sm tracking-wide uppercase border-none">Contenido</h3><div><ul><li class="font-semibold depth-2"><a href="/wiki/wm/bspwm/#скачать-iso-образ" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Скачать iso образ
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#оформление" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Оформление
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#панели" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Панели
+        </a></li><li class="depth-3"><a href="/wiki/wm/bspwm/#верхний-бар-polybar" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1 pl-2"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Верхний бар, polybar
+        </a></li><li class="depth-3"><a href="/wiki/wm/bspwm/#нижний-бар---трей-tint2" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1 pl-2"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Нижний бар - трей, tint2
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#горячие-клавиши" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Горячие клавиши
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#режимы-и-управление-окнами" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Режимы и управление окнами
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#запуск-утилит" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Запуск утилит
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#конфигурационные-файлы" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Конфигурационные файлы
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/wm/bspwm/#утилиты" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Утилиты
+        </a></li></ul></div></div></div><div class="order-1 w-full md:w-3/4"><!----><p class="inline-block mt-8 border-b border-dashed border-ui-primary text-ui-primary">
+           Fecha de modificación: 02.09.2020
+        </p><div class="content"><h1 id="ctlos-linux-bspwm-031"><a href="#ctlos-linux-bspwm-031" aria-hidden="true"><span class="icon icon-link"></span></a>Ctlos Linux Bspwm 0.3.1</h1>
+<p>Автор: Alex Creio <a href="https://t.me/cretm" target="_blank" rel="nofollow noopener noreferrer">@cretm</a>.</p>
+<p><img class="g-image g-image--lazy g-image--loading" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 1366 768' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-2aa819212e52ca24a41b30fbf1882540'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-2aa819212e52ca24a41b30fbf1882540)' width='1366' height='768' xlink:href='data:image/png%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAIAAAC2bqvFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAQLElEQVRYw51Y%2bW9l1X2ff6FJwfZb776duy/n7tt79622n5%2bfl7E9g2e1ZzzAMIQkAwNBTENVNQQiQgW0LA0UpYpEW0IaidL2p0pESlt1idJUbdSfW7WVmv%2bg3/u8jD3DCIj10dH3nHvufedzvrtP7V57J02vKGhBk0cu3sTOmqlN/GDTNJYtcy2MtkBA4kCWhrI0L3IJz2CecY9DYD2GtFy8fOnyd/NsW5YiRU6RGAmsLwkhCKqSlosoVeVMRYlhFCLvc/Td37kHWGADQ%2bvA6/Ci4/SREBt6YRoFCApKsLN44fJLp4J413S2NGPdsLcsfNZ0zpj2mem4ZTtnHO%2bc6ZzVrU0DYJ%2bRpIRlZI7VOVY7DpZRRdE2zRZCLs/rPG/wnM4dQNufTsdSEHjjrtfvQrl5H7whCjbsFwRTFK2pYIFQfgceibaihKcUfVW3NjRrXUA9hmvzYhcgSD0O9Zt8m6JClkthyks9EQ1ZzqEogaKle0FSIkFwJDylRIoWp4viwdODFZGipGNP74smwZdoco0GWwKEOl2rkrUaVa9RtSpFkjzDII5TGw3mFFy8YW%2byQo4sv79x3skHuDXQ3SA3nW9MLmzceKu/9Yyddd0oM223QbB1gvuiqDWnb5F8neDrpNCYon58LNf5BsU3SNjGWtjzgiCI0zDJwiQNkiwbrQ42z/U3tgcb5/qnt3nVgaNznEySwilRSnnBAcaC4ecLK27WCzvzdpjZhrtaLLdWrwe9bS1oGX6m2CEl6l8UpKDxOjZczfSRHSiGK/KIZpEvqAEjYV6NaF5zfJ%2bgxN98gJiZox6YIesNUKZEMxrHGzStULTKSJ5sZchMRT2BkeIUklRVdR6hhVMs6IKVQfVNTqnDa6JD8maDFOfqzJerxMxMZbZSr9RpQLXB/BrXD29JhtuZXBlu3RpufX1l94XJDuDFKb492X1xsvtC//SttYvb566P1y%2bNzlxb3ru1uff05t6tjau3Tu89vVEKT56%2bcnMVcPWptctPrPJI4fm%2b6%2b6p6ulTLKtyrAq6IHhV0QzX8zDGNMNX61SjCSdma02m1qRLNGhYrDY%2bFUeP6BPrTXquRoqa3V5%2bpLf1/OjSy/PnvtVefapYf/oAazDe6mz89nh7a%2b%2bZydVb6499c/PGNzcfenR07sbSucemuLGPMeD84%2bOHHh2LqsHxXYx3FGUVCCjgDQS4BbJFNZA0H%2bmhqIagXF4BgBDCyAHkoBRkvxTUCMapEE4FvxSOnirTV6bbGORrbiYbPiNiM1rmZO9B%2bJuZnZmZffAQkpEJiolTJ%2br4VmjPVenf%2bFLjS19u3gtYf2AGrlcRhB52do8RIDhasrVobCQrajQxkokejfVoooVLRjyx8tPlmE5sEJKJna3a%2bboZL5vJsp2tGfGyEY%2btbNVMV0AwAclKiXgM2%2bCDZtTVnBQ5EB7OKE63QUlNGh0Bpshsq5aXL4RAQNJVVpAImicZ4V7AOs0jVlR4oefgHfkYAZ4WddtPNNv308LyQgTuptmSgXnFbDAiLZuspMumx4oq2DQvmzVKrLNynUEkrxAATiZ4%2bUDm5SlKocEiyfSAgKDndrrOShhMsQw7B07Cg6VxyIWf81s4aHvVOnsQte4T0AhaZIV7CEDQFXQ3KoYQapLOgu6EXtYz/dQOW7oTEazMW7Ekq5qqCCLSNYgAim2q2NZgBQ7RhBhwH8CvynYABESzsNPTqjc8eSYgQIPhwdVYgdkZQ4QRvziBqROXr9ESwSlNCEq8CsGjQU/ByA3QNa/xguVbKcMohurxvJq4ndRrcbz0YIWerTEzNWZ2ihNCnX1wjoKrKU3I7jn5Bq/408B/ggCoRTZcO7KKUfK5CXQdfFlWVo6bkKE5kRu3kebIGgZTATLAhBI0BTsIR46le5aGTQUbimMCVGyoMHUtxTVlz1awpWAQYArydL1cNBAOQtXJRLMNPqCHS9OMdlIDyJVN1/CN/mouKDJYUZ38NQggE1kQTyzQOSiBmOqhJMCryLIlJ2hlXqftFbnXbYHgHwpe0fI7raALKy2/gD0tWAEER9vCJEZmpLgLVryKrKJ%2bIp3fIWCFZrGUMrxUa3weAh0HX5SVyTETIjg4K4dMRtTKUTIIFoESAKUJ0VKVlCokqpKoUgpSjZJBbrBahZAeqLKzTbFKIUC5h5Zn6tz%2bngqBWMlQ7cTOz%2bLWFkTbJoOOcSidGBYVMM/A7E0yzdE/nwkdJ3CgAUuxU8MvZCvRXagdijIDaCVEIxaMWDITyYhFPYRRsCINx4PRxPIiP2kX82Mc5RSv0IIKACHOu1FeRK1e3h1Kpqvh3MrOeMU2WBEtWNMj8ncIKKHhhV7upIMo7oWyqUEq%2bEIEtAZcMi4mV18f7766cu3NlWtvrOy9sfbwW7Cysvf7a4%2b8vXrtjdWH34Jx%2bcqrp6%2b/6xSbjKggzYaPQrCK2wM3atG8AoUD/Ea1TmsO1D1YVB0TR6KONTc34jW/d8FpbUlmu04wJzSghLoTx%2b0863ajdhZkmRslgmzeW7wcEeCEwsIXkLJ8QKAJBJz26NJ3RhdfGu98d7z7SjnuvAJTWBzv/t5452VYXLr88uKFbwMru32a4uUmVUYMUIVs4HqTPQov8MMcMgTFIhgJ6VgyPBVnTuts2L%2bkun1RTxnRPrAisvQBQQUvD5J%2bkA1jw7NVx0CGfixXfDYByAOsoEfR/LV4HwsHQjS/B4iP1svp1WThUTWcp0UNvgVf1HFieUlpFc1jBZwG12%2bRLJINr0xkOHfa56PBNSNcttMt2WrDxe%2bHo7kqZLwIGV5QuNkg1LABkXSu9hkmNCVwHinjO04M6bZG0jUCvktXm1SNoCFA76NO3UE5JRla0lnFgcDFyBanOAAGmbRUThlUgpVtkFnFhkVIZKodmskoHkIB0qF4YEhPT8MRDFTXErQfsom9zIEoBARIVqjfx4/vQ2C/FkIQw1uSmwu6F7b6EBZqTZ6A/ghaLUhwDCKmsbUUGASRRFBNSVThEA2ybEeg7kemD3pvHOVgkgMZfpKTdM12Dey2hp2oneaDPsPJ%2b6EGygjVcaJWptpQyXnFUhJ3fQ6hauMLEgAT4g1I5Uso6EA0drvLbjEC2yTAPeApg2oNBlxzWsZwcD2EYBhB6tk2xQoUJ0MkR5rpRQnLCY1pCAd/gPUmpHNKFBVLs3zTS9r9Efh6mPUU3amVPgNFOy0qDlQvUIx6LdybpLD3fqc/SaBt4XNIWTqmAdVD0YLgdUW/r0eJl6S6nxlpW4tz3gwIVqFkH1CpC7NzNCGHTndVVDQSijbOZHmVZQSek0QR8ig/U2ErDanJ6JSERbtt4FS3PdOLW/0FHukV6DSggZw6AHgL8EryrmZjJ7IWzxStxYSTUO2zTahl4e07BJpNXtLkMLdsH8xVD3Mtaqm2J/mxDHBDxY21IHf8HINsOpLjK15iG5Zo2CJs0ywYZd2WVFOAqRsiN0COJ3qREqRamGHF9AwcZp1h2VNO42Ntes1wINBJkBbQSYWF116M425gBVbjszIxJ5YmJCmjkgAv6LMPNC88%2b9iHv/rbt37%2b0Wt//8O3f/EXH/7fT9/51798%2b%2bcf/dEv//qtf/7RG//4w3f%2b5UMY3/v3j177uw/e/beP3/zZj1//hx//4S8%2b%2buP/%2bPiVn/zJe7/86M1/%2bvM/%2bNnH7//XJ3/2P5/86X9/8sH//uT9//ybH/3qpy/91buSbFleDASgYgcCkCI4SSsP1GCcMIOspztu0Hb9tieo4Fdsc9rg30vjkIBKUrpurSH1KIxCDPKKxeu/tXzjdu/iE5PHbs/vfaN17onhzs3iwhOjh59d2nsq23pk6eFn3PGl3oXHezs3Bztfn9%2b9uXD11nDnydXHnl3cu5U%2bdGP1K8%2b3zj8xun578eFn2xe/tvz48%2bs3vzXa/ZpqYtONo7wLfgD%2bAARYUZseVATLivOOpFpxz4c0bAYWI0iQiaGkA2e4y5YOCIiQeZnyX09CWhIAULQ4M1tTFCNOMk23srytqhpJcoZusqwQhGkYJmnWcrAfp604igVB0TRTVXVZ1kzbT9Nc1cuoD/doaLqm2WEYw4YoyqIowTiABsNwoqQ9DNOu5UaVGlk9iEKi5cZhUqjgA7GV9MPxQx0wIUFRJE3lkXxXdX2HQJOHeycJ/jAPUALYpR1knYVlOE97sAS6FiDCBSmkUj/ttHqL8MiFCxyv9xbHEGTtILW9xPITHBfFYMmJckhIkA3sKLdCH8dJ0mt7WeLnKZQGqoXhY635Iu5kUIAQtLDvx%2bWPhl7SyQzPdTMnG0bdSZb0AuhsBmt5DC1yYH26Bpocz2nl/4UOCYiVOg0JNesOoXpp9RctN%2bThNF4MQdBPCjBfOCVUbN2FSXd%2bBP0H2LSFI7g/J8w7gxEEkwYtQvcjmRgKY8lQ/JaLE8cM9KAVwgVrrpkvJGk/dBMP6oj9f9VAj%2bvEbtgKdIy93IVqws/doOWaPnSwiBERxUvHS%2bvPJtDuLwKB9jECYJ1AIAcCw1FJYHGld0TAjWB0wlZnOALlQfsGjQSyXbg2xdKhwcUpkLGAQGn3ph/lg2K41JlfklUbFAveDLkCBxkOctV2o64HF6/aOsEIczWmUmdKH2iwn1cDkFMsP20NRiWN4RKYh6DYTphK0Odn3by3AL/tJkVvtNJdWFLsADaUCFInanfnl8O8V/ZAgi47nh05qmOF3dDNAzvGYTtRLQ%2bOmHS6adH1ohyaPgYKb%2bj6adGN0yhvKxZoALcWY0lXQS3TVPjpYRT8/lMIUBTUT5ThBFm7CyNcqWG5rAAO6gkISgvw6l4xWHS8qLuw3B0sSLJp4tC0XNgGPtPpzYdZAX4JFyYaDhRvkiJ6iWEHuu7IfuLKhgMFpp/7gqyQUIlQBz5AQZnhwjW5SLd0bOLUVSwDnpKM2KShhCkBU%2bKYDEqDMHqSQPmPLYETlclXn7/0yg8G23sXX/ze2pO/2zv/6PZ33uuevbr53MsP/c4bS5evb7/4zvpXnjv91dtnXvheZ/Pyxu3vnn3%2btfkLj%2b68%2bv7k%2btMLjzy99dL325PNtZu3z7/y/Stvvr/z%2bg%2buvP3BxnMvqm6m4FTQPASdrx0GaQfSGjCH%2bAAW68UFKN32UstNQZNl3QFBoD0A6zKcMG71INk5XqyD2v0EvI4T7yFQVqMkL%2bFUjrqs6qCgEJ2EN3wlGbAqhgpPCgpGtpW4zxk%2bVE0g0LKJgjby25yK5aQPmyWcaNk8I%2brwrprOK%2blQSYZatiC6eb2s7YT69NahwoM%2boUkLzcPbpTgEcQmSV5MuAe0O2A8Y0v4KWRZUBwXivt7gaZOAMHpIAEDTUq1Oz8015mZrlQoxN1uvzDUqlebcTK1SJSqzdVipVslyWmnur1er5bZyJ%2bzfX4fXH6yW2%2bYaszPVuUNU5urwcUC9Qe8L1Tq1LxyCalImyWCCdkgGgA9lGK17NpcAmz9BYAqZ5dQSIO%2bPR8Jd68en3OGLJ9YP5SPAnjtQ7hI4TletiWava/baPVgXpIhhJNjGMAgu%2bgAMYli5SXD/D5cDZPQj64VHAAAAAElFTkSuQmCC' /%3e%3c/svg%3e" width="1366" alt="Bspwm" data-srcset="/assets/static/bspwm010.82a2fbd.bf4129b5f12ed5f4db2cfb2fe95a480a.png 480w, /assets/static/bspwm010.cbab2cf.bf4129b5f12ed5f4db2cfb2fe95a480a.png 1024w, /assets/static/bspwm010.4833fd8.bf4129b5f12ed5f4db2cfb2fe95a480a.png 1366w" data-sizes="(max-width: 1366px) 100vw, 1366px" data-src="/assets/static/bspwm010.4833fd8.bf4129b5f12ed5f4db2cfb2fe95a480a.png"><noscript><img class="g-image g-image--lazy g-image--loaded" src="/assets/static/bspwm010.4833fd8.bf4129b5f12ed5f4db2cfb2fe95a480a.png" width="1366" alt="Bspwm"></noscript></p>
+<p><a href="https://www.youtube.com/watch?v=INOtQJ_yZE4" target="_blank" rel="nofollow noopener noreferrer">Demo Video</a>.</p>
+<h2 id="скачать-iso-образ"><a href="#%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C-iso-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7" aria-hidden="true"><span class="icon icon-link"></span></a>Скачать iso образ</h2>
+<ul>
+<li>Скачать <a href="/get">Ctlos Bspwm</a></li>
+<li>Описание Релиза <a href="/wiki/changelog/bspwm-0-3-1">changelog/bspwm</a></li>
+</ul>
+<p>Для установки левый верхний лаунчер на панели, правый клик - установщик в меню. По левому клику в rofi набрать <code>calamares</code> Enter.</p>
+<blockquote>
+<p>Рекомендации после установки <a href="https://Killer-OS-Oficial.github.io/wiki/install/next-install/" target="_blank" rel="nofollow noopener noreferrer">next-install</a>.</p>
+</blockquote>
+<p>Исходники: <a href="https://github.com/ctlos/ctlosiso/tree/v0.1.0-bdsm" target="_blank" rel="nofollow noopener noreferrer">bspwm ветка</a>.</p>
+<h2 id="оформление"><a href="#%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" aria-hidden="true"><span class="icon icon-link"></span></a>Оформление</h2>
+<ul>
+<li>Тема gtk: модификация Qogir.</li>
+<li>Иконки: Qogir-dark, dui-ico.</li>
+<li>Курсор: capitaine-cursors.</li>
+<li>Шрифт: Clear Sans Medium,9 <code>ttf-clear-sans</code>.</li>
+<li>Шрифт терминала: uw-ttyp0, Hack Nerd Font Mono,9 <code>ttf-nerd-fonts-hack-complete-git</code>.</li>
+</ul>
+<h2 id="панели"><a href="#%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8" aria-hidden="true"><span class="icon icon-link"></span></a>Панели</h2>
+<h3 id="верхний-бар-polybar"><a href="#%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9-%D0%B1%D0%B0%D1%80-polybar" aria-hidden="true"><span class="icon icon-link"></span></a>Верхний бар, polybar</h3>
+<p>Элементы:</p>
+<ul>
+<li>Запуск меню: левый клик - rofi, правый клик - jgmenu.</li>
+<li>Urxvt с сессией tmux. Сессия сохраняется, при закрытии и восстанавливается, при следующем нажатии.</li>
+<li>Newsboat - rss читалка.</li>
+<li>Монитор cpu и ram.</li>
+<li>Доступные обновления, клик: pacui - псевдо графический менеджер пакетов.</li>
+<li>Рабочие столы (теги).</li>
+<li>Сервис tor. Включить левый клик, выключить правый.</li>
+<li>Music контроллер mpd.</li>
+<li>Звук по скроллу, клик - выкл.</li>
+<li>Дата. Лклик - подробней, Пклик - календарь.</li>
+<li>Раскладка.</li>
+<li>Меню выхода.</li>
+</ul>
+<h3 id="нижний-бар---трей-tint2"><a href="#%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9-%D0%B1%D0%B0%D1%80---%D1%82%D1%80%D0%B5%D0%B9-tint2" aria-hidden="true"><span class="icon icon-link"></span></a>Нижний бар - трей, tint2</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>udiskie</td>
+<td>монтирование usb.</td>
+</tr>
+<tr>
+<td>redshift-gtk</td>
+<td>цветовой тон экрана.</td>
+</tr>
+<tr>
+<td>xfce4-power-manager</td>
+<td>менеджер питания.</td>
+</tr>
+<tr>
+<td>parcellite</td>
+<td>менеджер буфера обмена. <code>ctrl+alt+h</code> открыть историю.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="горячие-клавиши"><a href="#%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8" aria-hidden="true"><span class="icon icon-link"></span></a>Горячие клавиши</h2>
+<p>Очень многое переопределено, но никто не мешает использовать дефолт, <a href="https://github.com/baskerville/bspwm/blob/master/examples/sxhkdrc" target="_blank" rel="nofollow noopener noreferrer">sxhkdrc</a>.</p>
+<h2 id="режимы-и-управление-окнами"><a href="#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D1%8B-%D0%B8-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D0%BA%D0%BD%D0%B0%D0%BC%D0%B8" aria-hidden="true"><span class="icon icon-link"></span></a>Режимы и управление окнами</h2>
+<ul>
+<li>Режим тайлинга tiled, плитка.</li>
+<li>Режим pseudo_tiled, псевдо тайлинг. Нечто среднее между floating и tiled.</li>
+<li>Режим floating, плавающий режим.</li>
+<li>Режим fullscreen, Весь экран.</li>
+<li>Режим monocle, окно занимает всё доступное пространство.</li>
+</ul>
+<p>Зажатая <code>Super(win)</code> и клавиши мыши манипулируют окнами: резмер, положение.</p>
+<table>
+<thead>
+<tr>
+<th>Ключ</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>super + a</code></td>
+<td>Псевдо тайлинг.</td>
+</tr>
+<tr>
+<td><code>super + s</code></td>
+<td>floating, плавающий режим.</td>
+</tr>
+<tr>
+<td><code>super + d</code></td>
+<td>тайлинг.</td>
+</tr>
+<tr>
+<td><code>super + f</code></td>
+<td>fullscreen.</td>
+</tr>
+<tr>
+<td><code>super + m</code></td>
+<td>Переключение режима monocle.</td>
+</tr>
+<tr>
+<td><code>alt + space</code></td>
+<td>Переключение режима тайлинг/floating.</td>
+</tr>
+<tr>
+<td><code>super + g</code></td>
+<td>Приклеить окно.</td>
+</tr>
+<tr>
+<td><code>super + z</code></td>
+<td>Закрыть окно.</td>
+</tr>
+<tr>
+<td><code>super + -</code></td>
+<td>Скрыть/показать окно.</td>
+</tr>
+<tr>
+<td><code>super + c</code></td>
+<td>Переход в режим monocle, отключение рамок и отступов.</td>
+</tr>
+<tr>
+<td><code>super + v</code></td>
+<td>Отключение отступов.</td>
+</tr>
+<tr>
+<td><code>super + {↑,↓}</code></td>
+<td>Уменьшение/увеличение отступов, <code>super + c</code> в исходное состояние.</td>
+</tr>
+<tr>
+<td><code>super + scroll</code></td>
+<td>Уменьшение/увеличение отступов, <code>super + c</code> в исходное состояние.</td>
+</tr>
+<tr>
+<td><code>super + {←,→,↑,↓}</code></td>
+<td>Перемещение окна в режиме floating.</td>
+</tr>
+<tr>
+<td><code>super + {h,j,k,l}</code></td>
+<td>перемещение по окнам в режиме tiled.</td>
+</tr>
+<tr>
+<td><code>super + alt + {h,j,k,l}</code></td>
+<td>изменение размера в режиме tiled.</td>
+</tr>
+<tr>
+<td><code>super + shift + {h,j,k,l}</code></td>
+<td>перетаскивание в режиме tiled.</td>
+</tr>
+<tr>
+<td><code>alt + tab</code></td>
+<td>Переключение окна на текущем теге.</td>
+</tr>
+<tr>
+<td><code>super + tab</code></td>
+<td>Переключение на предыдущий тег.</td>
+</tr>
+<tr>
+<td><code>super + {1-9,0}</code></td>
+<td>Переход на тег.</td>
+</tr>
+<tr>
+<td><code>super + {q...o,0}</code></td>
+<td>Переход на тег.</td>
+</tr>
+<tr>
+<td><code>super + alt + {←,→}</code></td>
+<td>Перемещение по тегам.</td>
+</tr>
+<tr>
+<td><code>super + alt + {1-9,0}</code></td>
+<td>Отправка окна на номер тега.</td>
+</tr>
+<tr>
+<td><code>super + ctrl + p</code></td>
+<td>Скрыть/показать polybar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="запуск-утилит"><a href="#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82" aria-hidden="true"><span class="icon icon-link"></span></a>Запуск утилит</h2>
+<table>
+<thead>
+<tr>
+<th>Ключ</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alt + shift</code></td>
+<td>Переключение раскладки.</td>
+</tr>
+<tr>
+<td><code>super + alt + r</code></td>
+<td>Рестарт bspwm.</td>
+</tr>
+<tr>
+<td><code>super + alt + q</code></td>
+<td>Выход из bspwm.</td>
+</tr>
+<tr>
+<td><code>super + Escape</code></td>
+<td>Релоад конфига горячих клавиш sxhkd.</td>
+</tr>
+<tr>
+<td><code>alt + Return</code></td>
+<td>Терминал драйвинг, задаем координаты старта, зажатым ЛКМ.</td>
+</tr>
+<tr>
+<td><code>super + Return</code></td>
+<td>Терминал на первом теге, в режиме тайлинга, monocle.</td>
+</tr>
+<tr>
+<td><code>alt + t</code></td>
+<td>Терминал в режиме floating.</td>
+</tr>
+<tr>
+<td><code>alt + r</code></td>
+<td>Ranger - консольный менеджер файлов.</td>
+</tr>
+<tr>
+<td><code>alt + d</code></td>
+<td>Rofi - меню.</td>
+</tr>
+<tr>
+<td><code>alt + w</code></td>
+<td>Firefox.</td>
+</tr>
+<tr>
+<td><code>alt + f</code></td>
+<td>Thunar.</td>
+</tr>
+<tr>
+<td><code>super + Delete</code></td>
+<td>Блокировка экрана.</td>
+</tr>
+<tr>
+<td><code>super + alt + Delete</code></td>
+<td>Меню выхода.</td>
+</tr>
+<tr>
+<td><code>Print</code></td>
+<td>скрин с отправкой в <code>~/Pictures/screen</code>(директория должна быть). Копируется в буфер.</td>
+</tr>
+<tr>
+<td><code>super + Print</code></td>
+<td>скрин в режиме выделения.</td>
+</tr>
+<tr>
+<td><code>super + alt + Print</code></td>
+<td>скрин с задержкой 5 сек. и отправкой в <code>~/Pictures/screen</code>(директория должна быть). Копируется в буфер.</td>
+</tr>
+<tr>
+<td><code>super + alt + m</code></td>
+<td>Текущий трек в ncmpcpp.</td>
+</tr>
+<tr>
+<td><code>ctrl + alt + {c,v}</code></td>
+<td>Копировать/вставить в терминале.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="конфигурационные-файлы"><a href="#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B" aria-hidden="true"><span class="icon icon-link"></span></a>Конфигурационные файлы</h2>
+<table>
+<thead>
+<tr>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~/.config/bspwm/bspwmrc</td>
+<td>Основной конфиг.</td>
+</tr>
+<tr>
+<td>~/.config/bspwm</td>
+<td>Скрипты.</td>
+</tr>
+<tr>
+<td>/usr/bin/bspwm_start</td>
+<td>Скрипт автостарта, редактировать от <code>ROOT</code>. Он вызывается в <code>~/.xinitrc</code> и в SDDM <code>/usr/share/xsessions/bspwm.desktop</code>.</td>
+</tr>
+<tr>
+<td>~/.config/sxhkd/sxhkdrc</td>
+<td>Конфиг горячих клавиш.</td>
+</tr>
+<tr>
+<td>/etc/sddm.conf</td>
+<td>Конфиг менеджера входа SDDM.</td>
+</tr>
+<tr>
+<td>~/.config/bspwm/polybar</td>
+<td>Скрипты и конфиг polybar.</td>
+</tr>
+<tr>
+<td>~/.config/tint2/tray.tint2rc</td>
+<td>Конфиг tint2 трей. В меню есть gui-конфигуратор (Настройки tint).</td>
+</tr>
+<tr>
+<td>~/.config/picom.conf</td>
+<td>Декоратор окон, композитный менеджер.</td>
+</tr>
+<tr>
+<td>~/.Xresources</td>
+<td>Конфиг Urxvt терминала. После изменения файла выполнить <code>xrdb -merge $HOME/.Xresources</code>.</td>
+</tr>
+<tr>
+<td>~/.colors</td>
+<td>Палитры терминала, указывать в <code>~/.Xresources</code> строка <code>#include ".colors/sn"</code>.</td>
+</tr>
+<tr>
+<td>~/.zshrc</td>
+<td>Конфиг оболочки $SHELL.</td>
+</tr>
+<tr>
+<td>~/.alias_zsh</td>
+<td>Алиасы и функции zsh, сокращения команд терминала.</td>
+</tr>
+</tbody>
+</table>
+<p>Это основа, все остальное в <code>~/</code> и <code>~/.config</code>.</p>
+<h2 id="утилиты"><a href="#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B" aria-hidden="true"><span class="icon icon-link"></span></a>Утилиты</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>neofetch, fetch</td>
+<td>информация о системе. <code>~/.bin/fetch</code>.</td>
+</tr>
+<tr>
+<td>lxappearance, qt5ct</td>
+<td>настройка внешнего вида.</td>
+</tr>
+<tr>
+<td>lxrandr</td>
+<td>разрешение экрана.</td>
+</tr>
+<tr>
+<td>gotop</td>
+<td>Консольный системный монитор.</td>
+</tr>
+<tr>
+<td>gufw</td>
+<td>межсетевой экран.</td>
+</tr>
+<tr>
+<td>ranger, thunar</td>
+<td>файловые менеджеры.</td>
+</tr>
+<tr>
+<td>fzf</td>
+<td>инкрементальный поиск, <code>zz</code>.</td>
+</tr>
+<tr>
+<td>nano, micro</td>
+<td>консольный текстовый редактор, привычные клавиши:) ctrl+s - сохранить, ctrl+q - выход и т.д.</td>
+</tr>
+<tr>
+<td>leafpad</td>
+<td>Gui текстовый редактор.</td>
+</tr>
+<tr>
+<td>xreader</td>
+<td>просмотр pdf.</td>
+</tr>
+<tr>
+<td>viewnior</td>
+<td>просмотр изображений.</td>
+</tr>
+<tr>
+<td>ncmpcpp, audacious</td>
+<td>музыкальный плеер.</td>
+</tr>
+<tr>
+<td>cava</td>
+<td>визуализатор.</td>
+</tr>
+<tr>
+<td>mpv, smplayer</td>
+<td>видео плеер.</td>
+</tr>
+<tr>
+<td>youtube-dl, straw-viewer, streamlink</td>
+<td>скачивание, просмотр, просмотр стриминга.</td>
+</tr>
+<tr>
+<td>simplescreenrecorder</td>
+<td>Запись экрана.</td>
+</tr>
+<tr>
+<td>flameshot</td>
+<td>скриншоты.</td>
+</tr>
+<tr>
+<td>keepassxc</td>
+<td>менеджер паролей.</td>
+</tr>
+<tr>
+<td>veracrypt</td>
+<td>шифрование файлов.</td>
+</tr>
+<tr>
+<td>pavucontrol</td>
+<td>управление звуком.</td>
+</tr>
+<tr>
+<td>file-roller</td>
+<td>менеджер архивов.</td>
+</tr>
+<tr>
+<td>timeshift</td>
+<td>резервное копирование.</td>
+</tr>
+<tr>
+<td>tmux</td>
+<td>терминальный мультиплексор.</td>
+</tr>
+<tr>
+<td>rxrun.sh</td>
+<td>Tmux с 3 табами. <code>~/.bin/rxrun.sh</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Еще скрипты: <code>~/.bin</code>.</p>
+<p>Полный список пакетов: <a href="https://github.com/ctlos/ctlosiso/blob/v0.3.1-bdsm/packages.x86_64" target="_blank" rel="nofollow noopener noreferrer">packages.x86_64</a>.</p>
+<p>Комментарии приветствуются. Вступай в telegram чат: <a href="https://t.me/ctlos" target="_blank" rel="nofollow noopener noreferrer">t.me/ctlos</a>.</p>
+</div><div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border"><div><div class="flex flex-col sm:flex-row justify-between items-center"><!----><!----></div></div></div></div></div></div></main></div><!----></div>
+    <script>window.__INITIAL_STATE__={"data":{"markdownPage":{"id":"e0460b2586e81605133fd739d7b305fe","title":"Ctlos Bspwm","description":"Описание конфигурации Ctlos Linux Bspwm, горячие клавиши, утилиты.","date":null,"date_up":"02.09.2020","path":"\u002Fwiki\u002Fwm\u002Fbspwm\u002F","timeToRead":3,"content":"\u003Ch1 id=\"ctlos-linux-bspwm-031\"\u003E\u003Ca href=\"#ctlos-linux-bspwm-031\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ECtlos Linux Bspwm 0.3.1\u003C\u002Fh1\u003E\n\u003Cp\u003EАвтор: Alex Creio \u003Ca href=\"https:\u002F\u002Ft.me\u002Fcretm\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003E@cretm\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Cimg class=\"g-image g-image--lazy g-image--loading\" src=\"data:image\u002Fsvg+xml,%3csvg fill='none' viewBox='0 0 1366 768' xmlns='http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg' xmlns:xlink='http:\u002F\u002Fwww.w3.org\u002F1999\u002Fxlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-2aa819212e52ca24a41b30fbf1882540'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'\u002F%3e%3c\u002Ffilter%3e%3c\u002Fdefs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-2aa819212e52ca24a41b30fbf1882540)' width='1366' height='768' xlink:href='data:image\u002Fpng%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAIAAAC2bqvFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAQLElEQVRYw51Y%2bW9l1X2ff6FJwfZb776duy\u002Fn7tt79622n5%2bfl7E9g2e1ZzzAMIQkAwNBTENVNQQiQgW0LA0UpYpEW0IaidL2p0pESlt1idJUbdSfW7WVmv%2bg3\u002Fu8jD3DCIj10dH3nHvufedzvrtP7V57J02vKGhBk0cu3sTOmqlN\u002FGDTNJYtcy2MtkBA4kCWhrI0L3IJz2CecY9DYD2GtFy8fOnyd\u002FNsW5YiRU6RGAmsLwkhCKqSlosoVeVMRYlhFCLvc\u002FTd37kHWGADQ%2bvA6\u002FCi4\u002FSREBt6YRoFCApKsLN44fJLp4J413S2NGPdsLcsfNZ0zpj2mem4ZTtnHO%2bc6ZzVrU0DYJ%2bRpIRlZI7VOVY7DpZRRdE2zRZCLs\u002FrPG\u002FwnM4dQNufTsdSEHjjrtfvQrl5H7whCjbsFwRTFK2pYIFQfgceibaihKcUfVW3NjRrXUA9hmvzYhcgSD0O9Zt8m6JClkthyks9EQ1ZzqEogaKle0FSIkFwJDylRIoWp4viwdODFZGipGNP74smwZdoco0GWwKEOl2rkrUaVa9RtSpFkjzDII5TGw3mFFy8YW%2byQo4sv79x3skHuDXQ3SA3nW9MLmzceKu\u002F9Yyddd0oM223QbB1gvuiqDWnb5F8neDrpNCYon58LNf5BsU3SNjGWtjzgiCI0zDJwiQNkiwbrQ42z\u002FU3tgcb5\u002Fqnt3nVgaNznEySwilRSnnBAcaC4ecLK27WCzvzdpjZhrtaLLdWrwe9bS1oGX6m2CEl6l8UpKDxOjZczfSRHSiGK\u002FKIZpEvqAEjYV6NaF5zfJ%2bgxN98gJiZox6YIesNUKZEMxrHGzStULTKSJ5sZchMRT2BkeIUklRVdR6hhVMs6IKVQfVNTqnDa6JD8maDFOfqzJerxMxMZbZSr9RpQLXB\u002FBrXD29JhtuZXBlu3RpufX1l94XJDuDFKb492X1xsvtC\u002F\u002FSttYvb566P1y%2bNzlxb3ru1uff05t6tjau3Tu89vVEKT56%2bcnMVcPWptctPrPJI4fm%2b6%2b6p6ulTLKtyrAq6IHhV0QzX8zDGNMNX61SjCSdma02m1qRLNGhYrDY%2bFUeP6BPrTXquRoqa3V5%2bpLf1\u002FOjSy\u002FPnvtVefapYf\u002FoAazDe6mz89nh7a%2b%2bZydVb6499c\u002FPGNzcfenR07sbSucemuLGPMeD84%2bOHHh2LqsHxXYx3FGUVCCjgDQS4BbJFNZA0H%2bmhqIagXF4BgBDCyAHkoBRkvxTUCMapEE4FvxSOnirTV6bbGORrbiYbPiNiM1rmZO9B%2bJuZnZmZffAQkpEJiolTJ%2br4VmjPVenf%2bFLjS19u3gtYf2AGrlcRhB52do8RIDhasrVobCQrajQxkokejfVoooVLRjyx8tPlmE5sEJKJna3a%2bboZL5vJsp2tGfGyEY%2btbNVMV0AwAclKiXgM2%2bCDZtTVnBQ5EB7OKE63QUlNGh0Bpshsq5aXL4RAQNJVVpAImicZ4V7AOs0jVlR4oefgHfkYAZ4WddtPNNv308LyQgTuptmSgXnFbDAiLZuspMumx4oq2DQvmzVKrLNynUEkrxAATiZ4%2bUDm5SlKocEiyfSAgKDndrrOShhMsQw7B07Cg6VxyIWf81s4aHvVOnsQte4T0AhaZIV7CEDQFXQ3KoYQapLOgu6EXtYz\u002FdQOW7oTEazMW7Ekq5qqCCLSNYgAim2q2NZgBQ7RhBhwH8CvynYABESzsNPTqjc8eSYgQIPhwdVYgdkZQ4QRvziBqROXr9ESwSlNCEq8CsGjQU\u002FByA3QNa\u002FxguVbKcMohurxvJq4ndRrcbz0YIWerTEzNWZ2ihNCnX1wjoKrKU3I7jn5Bq\u002F408B\u002FggCoRTZcO7KKUfK5CXQdfFlWVo6bkKE5kRu3kebIGgZTATLAhBI0BTsIR46le5aGTQUbimMCVGyoMHUtxTVlz1awpWAQYArydL1cNBAOQtXJRLMNPqCHS9OMdlIDyJVN1\u002FCN\u002FmouKDJYUZ38NQggE1kQTyzQOSiBmOqhJMCryLIlJ2hlXqftFbnXbYHgHwpe0fI7raALKy2\u002FgD0tWAEER9vCJEZmpLgLVryKrKJ%2bIp3fIWCFZrGUMrxUa3weAh0HX5SVyTETIjg4K4dMRtTKUTIIFoESAKUJ0VKVlCokqpKoUgpSjZJBbrBahZAeqLKzTbFKIUC5h5Zn6tz%2bngqBWMlQ7cTOz%2bLWFkTbJoOOcSidGBYVMM\u002FA7E0yzdE\u002FnwkdJ3CgAUuxU8MvZCvRXagdijIDaCVEIxaMWDITyYhFPYRRsCINx4PRxPIiP2kX82Mc5RSv0IIKACHOu1FeRK1e3h1Kpqvh3MrOeMU2WBEtWNMj8ncIKKHhhV7upIMo7oWyqUEq%2bEIEtAZcMi4mV18f7766cu3NlWtvrOy9sfbwW7Cysvf7a4%2b8vXrtjdWH34Jx%2bcqrp6%2b\u002F6xSbjKggzYaPQrCK2wM3atG8AoUD\u002FEa1TmsO1D1YVB0TR6KONTc34jW\u002Fd8FpbUlmu04wJzSghLoTx%2b0863ajdhZkmRslgmzeW7wcEeCEwsIXkLJ8QKAJBJz26NJ3RhdfGu98d7z7SjnuvAJTWBzv\u002Ft5452VYXLr88uKFbwMru32a4uUmVUYMUIVs4HqTPQov8MMcMgTFIhgJ6VgyPBVnTuts2L%2bkun1RTxnRPrAisvQBQQUvD5J%2bkA1jw7NVx0CGfixXfDYByAOsoEfR\u002FLV4HwsHQjS\u002FB4iP1svp1WThUTWcp0UNvgVf1HFieUlpFc1jBZwG12%2bRLJINr0xkOHfa56PBNSNcttMt2WrDxe%2bHo7kqZLwIGV5QuNkg1LABkXSu9hkmNCVwHinjO04M6bZG0jUCvktXm1SNoCFA76NO3UE5JRla0lnFgcDFyBanOAAGmbRUThlUgpVtkFnFhkVIZKodmskoHkIB0qF4YEhPT8MRDFTXErQfsom9zIEoBARIVqjfx4\u002FvQ2C\u002FFkIQw1uSmwu6F7b6EBZqTZ6A\u002FghaLUhwDCKmsbUUGASRRFBNSVThEA2ybEeg7kemD3pvHOVgkgMZfpKTdM12Dey2hp2oneaDPsPJ%2b6EGygjVcaJWptpQyXnFUhJ3fQ6hauMLEgAT4g1I5Uso6EA0drvLbjEC2yTAPeApg2oNBlxzWsZwcD2EYBhB6tk2xQoUJ0MkR5rpRQnLCY1pCAd\u002FgPUmpHNKFBVLs3zTS9r9Efh6mPUU3amVPgNFOy0qDlQvUIx6LdybpLD3fqc\u002FSaBt4XNIWTqmAdVD0YLgdUW\u002Fr0eJl6S6nxlpW4tz3gwIVqFkH1CpC7NzNCGHTndVVDQSijbOZHmVZQSek0QR8ig\u002FU2ErDanJ6JSERbtt4FS3PdOLW\u002F0FHukV6DSggZw6AHgL8EryrmZjJ7IWzxStxYSTUO2zTahl4e07BJpNXtLkMLdsH8xVD3Mtaqm2J\u002FmxDHBDxY21IHf8HINsOpLjK15iG5Zo2CJs0ywYZd2WVFOAqRsiN0COJ3qREqRamGHF9AwcZp1h2VNO42Ntes1wINBJkBbQSYWF116M425gBVbjszIxJ5YmJCmjkgAv6LMPNC88%2b9iHv\u002Frbt37%2b0Wt\u002F\u002F8O3f\u002FEXH\u002F7fT9\u002F51798%2b%2bcf\u002FdEv\u002F\u002Fqtf\u002F7RG\u002F\u002F4w3f%2b5UMY3\u002Fv3j177uw\u002Fe\u002FbeP3\u002FzZj1\u002F\u002Fhx\u002F\u002F4S8%2b%2buP\u002F%2bPiVn\u002FzJe7\u002F86M1\u002F%2bvM\u002F%2bNnH7\u002F\u002FXJ3\u002F2P5\u002F86X9\u002F8sH\u002F\u002FuT9\u002F\u002FybH\u002F3qpy\u002F91buSbFleDASgYgcCkCI4SSsP1GCcMIOspztu0Hb9tieo4Fdsc9rg30vjkIBKUrpurSH1KIxCDPKKxeu\u002FtXzjdu\u002FiE5PHbs\u002FvfaN17onhzs3iwhOjh59d2nsq23pk6eFn3PGl3oXHezs3Bztfn9%2b9uXD11nDnydXHnl3cu5U%2bdGP1K8%2b3zj8xun578eFn2xe\u002Ftvz48%2bs3vzXa\u002FZpqYtONo7wLfgD%2bAARYUZseVATLivOOpFpxz4c0bAYWI0iQiaGkA2e4y5YOCIiQeZnyX09CWhIAULQ4M1tTFCNOMk23srytqhpJcoZusqwQhGkYJmnWcrAfp604igVB0TRTVXVZ1kzbT9Nc1cuoD\u002FdoaLqm2WEYw4YoyqIowTiABsNwoqQ9DNOu5UaVGlk9iEKi5cZhUqjgA7GV9MPxQx0wIUFRJE3lkXxXdX2HQJOHeycJ\u002FjAPUALYpR1knYVlOE97sAS6FiDCBSmkUj\u002FttHqL8MiFCxyv9xbHEGTtILW9xPITHBfFYMmJckhIkA3sKLdCH8dJ0mt7WeLnKZQGqoXhY635Iu5kUIAQtLDvx%2bWPhl7SyQzPdTMnG0bdSZb0AuhsBmt5DC1yYH26Bpocz2nl\u002F4UOCYiVOg0JNesOoXpp9RctN%2bThNF4MQdBPCjBfOCVUbN2FSXd%2bBP0H2LSFI7g\u002FJ8w7gxEEkwYtQvcjmRgKY8lQ\u002FJaLE8cM9KAVwgVrrpkvJGk\u002FdBMP6oj9f9VAj%2bvEbtgKdIy93IVqws\u002FdoOWaPnSwiBERxUvHS%2bvPJtDuLwKB9jECYJ1AIAcCw1FJYHGld0TAjWB0wlZnOALlQfsGjQSyXbg2xdKhwcUpkLGAQGn3ph\u002Flg2K41JlfklUbFAveDLkCBxkOctV2o64HF6\u002FaOsEIczWmUmdKH2iwn1cDkFMsP20NRiWN4RKYh6DYTphK0Odn3by3AL\u002FtJkVvtNJdWFLsADaUCFInanfnl8O8V\u002FZAgi47nh05qmOF3dDNAzvGYTtRLQ%2bOmHS6adH1ohyaPgYKb%2bj6adGN0yhvKxZoALcWY0lXQS3TVPjpYRT8\u002FlMIUBTUT5ThBFm7CyNcqWG5rAAO6gkISgvw6l4xWHS8qLuw3B0sSLJp4tC0XNgGPtPpzYdZAX4JFyYaDhRvkiJ6iWEHuu7IfuLKhgMFpp\u002F7gqyQUIlQBz5AQZnhwjW5SLd0bOLUVSwDnpKM2KShhCkBU%2bKYDEqDMHqSQPmPLYETlclXn7\u002F0yg8G23sXX\u002Fze2pO\u002F2zv\u002F6PZ33uuevbr53MsP\u002Fc4bS5evb7\u002F4zvpXnjv91dtnXvheZ\u002FPyxu3vnn3%2btfkLj%2b68%2bv7k%2btMLjzy99dL325PNtZu3z7\u002Fy\u002FStvvr\u002Fz%2bg%2buvP3BxnMvqm6m4FTQPASdrx0GaQfSGjCH%2bAAW68UFKN32UstNQZNl3QFBoD0A6zKcMG71INk5XqyD2v0EvI4T7yFQVqMkL%2bFUjrqs6qCgEJ2EN3wlGbAqhgpPCgpGtpW4zxk%2bVE0g0LKJgjby25yK5aQPmyWcaNk8I%2brwrprOK%2blQSYZatiC6eb2s7YT69NahwoM%2boUkLzcPbpTgEcQmSV5MuAe0O2A8Y0v4KWRZUBwXivt7gaZOAMHpIAEDTUq1Oz8015mZrlQoxN1uvzDUqlebcTK1SJSqzdVipVslyWmnur1er5bZyJ%2bzfX4fXH6yW2%2bYaszPVuUNU5urwcUC9Qe8L1Tq1LxyCalImyWCCdkgGgA9lGK17NpcAmz9BYAqZ5dQSIO%2bPR8Jd68en3OGLJ9YP5SPAnjtQ7hI4TletiWava\u002FbaPVgXpIhhJNjGMAgu%2bgAMYli5SXD\u002FD5cDZPQj64VHAAAAAElFTkSuQmCC' \u002F%3e%3c\u002Fsvg%3e\" width=\"1366\" alt=\"Bspwm\" data-srcset=\"\u002Fassets\u002Fstatic\u002Fbspwm010.82a2fbd.bf4129b5f12ed5f4db2cfb2fe95a480a.png 480w, \u002Fassets\u002Fstatic\u002Fbspwm010.cbab2cf.bf4129b5f12ed5f4db2cfb2fe95a480a.png 1024w, \u002Fassets\u002Fstatic\u002Fbspwm010.4833fd8.bf4129b5f12ed5f4db2cfb2fe95a480a.png 1366w\" data-sizes=\"(max-width: 1366px) 100vw, 1366px\" data-src=\"\u002Fassets\u002Fstatic\u002Fbspwm010.4833fd8.bf4129b5f12ed5f4db2cfb2fe95a480a.png\"\u003E\u003Cnoscript\u003E\u003Cimg class=\"g-image g-image--lazy g-image--loaded\" src=\"\u002Fassets\u002Fstatic\u002Fbspwm010.4833fd8.bf4129b5f12ed5f4db2cfb2fe95a480a.png\" width=\"1366\" alt=\"Bspwm\"\u003E\u003C\u002Fnoscript\u003E\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=INOtQJ_yZE4\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003EDemo Video\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003Ch2 id=\"скачать-iso-образ\"\u003E\u003Ca href=\"#%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C-iso-%D0%BE%D0%B1%D1%80%D0%B0%D0%B7\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EСкачать iso образ\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003EСкачать \u003Ca href=\"\u002Fget\"\u003ECtlos Bspwm\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003EОписание Релиза \u003Ca href=\"\u002Fwiki\u002Fchangelog\u002Fbspwm-0-3-1\"\u003Echangelog\u002Fbspwm\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Cp\u003EДля установки левый верхний лаунчер на панели, правый клик - установщик в меню. По левому клику в rofi набрать \u003Ccode\u003Ecalamares\u003C\u002Fcode\u003E Enter.\u003C\u002Fp\u003E\n\u003Cblockquote\u003E\n\u003Cp\u003EРекомендации после установки \u003Ca href=\"https:\u002F\u002FKiller-OS-Oficial.github.io\u002Fwiki\u002Finstall\u002Fnext-install\u002F\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Enext-install\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003C\u002Fblockquote\u003E\n\u003Cp\u003EИсходники: \u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fctlos\u002Fctlosiso\u002Ftree\u002Fv0.1.0-bdsm\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Ebspwm ветка\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003Ch2 id=\"оформление\"\u003E\u003Ca href=\"#%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EОформление\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003EТема gtk: модификация Qogir.\u003C\u002Fli\u003E\n\u003Cli\u003EИконки: Qogir-dark, dui-ico.\u003C\u002Fli\u003E\n\u003Cli\u003EКурсор: capitaine-cursors.\u003C\u002Fli\u003E\n\u003Cli\u003EШрифт: Clear Sans Medium,9 \u003Ccode\u003Ettf-clear-sans\u003C\u002Fcode\u003E.\u003C\u002Fli\u003E\n\u003Cli\u003EШрифт терминала: uw-ttyp0, Hack Nerd Font Mono,9 \u003Ccode\u003Ettf-nerd-fonts-hack-complete-git\u003C\u002Fcode\u003E.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"панели\"\u003E\u003Ca href=\"#%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EПанели\u003C\u002Fh2\u003E\n\u003Ch3 id=\"верхний-бар-polybar\"\u003E\u003Ca href=\"#%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%B8%D0%B9-%D0%B1%D0%B0%D1%80-polybar\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EВерхний бар, polybar\u003C\u002Fh3\u003E\n\u003Cp\u003EЭлементы:\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003EЗапуск меню: левый клик - rofi, правый клик - jgmenu.\u003C\u002Fli\u003E\n\u003Cli\u003EUrxvt с сессией tmux. Сессия сохраняется, при закрытии и восстанавливается, при следующем нажатии.\u003C\u002Fli\u003E\n\u003Cli\u003ENewsboat - rss читалка.\u003C\u002Fli\u003E\n\u003Cli\u003EМонитор cpu и ram.\u003C\u002Fli\u003E\n\u003Cli\u003EДоступные обновления, клик: pacui - псевдо графический менеджер пакетов.\u003C\u002Fli\u003E\n\u003Cli\u003EРабочие столы (теги).\u003C\u002Fli\u003E\n\u003Cli\u003EСервис tor. Включить левый клик, выключить правый.\u003C\u002Fli\u003E\n\u003Cli\u003EMusic контроллер mpd.\u003C\u002Fli\u003E\n\u003Cli\u003EЗвук по скроллу, клик - выкл.\u003C\u002Fli\u003E\n\u003Cli\u003EДата. Лклик - подробней, Пклик - календарь.\u003C\u002Fli\u003E\n\u003Cli\u003EРаскладка.\u003C\u002Fli\u003E\n\u003Cli\u003EМеню выхода.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch3 id=\"нижний-бар---трей-tint2\"\u003E\u003Ca href=\"#%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9-%D0%B1%D0%B0%D1%80---%D1%82%D1%80%D0%B5%D0%B9-tint2\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EНижний бар - трей, tint2\u003C\u002Fh3\u003E\n\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EName\u003C\u002Fth\u003E\n\u003Cth\u003EОписание\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eudiskie\u003C\u002Ftd\u003E\n\u003Ctd\u003Eмонтирование usb.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eredshift-gtk\u003C\u002Ftd\u003E\n\u003Ctd\u003Eцветовой тон экрана.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Exfce4-power-manager\u003C\u002Ftd\u003E\n\u003Ctd\u003Eменеджер питания.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eparcellite\u003C\u002Ftd\u003E\n\u003Ctd\u003Eменеджер буфера обмена. \u003Ccode\u003Ectrl+alt+h\u003C\u002Fcode\u003E открыть историю.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\n\u003Ch2 id=\"горячие-клавиши\"\u003E\u003Ca href=\"#%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B8%D0%B5-%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EГорячие клавиши\u003C\u002Fh2\u003E\n\u003Cp\u003EОчень многое переопределено, но никто не мешает использовать дефолт, \u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fbaskerville\u002Fbspwm\u002Fblob\u002Fmaster\u002Fexamples\u002Fsxhkdrc\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Esxhkdrc\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003Ch2 id=\"режимы-и-управление-окнами\"\u003E\u003Ca href=\"#%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D1%8B-%D0%B8-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D0%BA%D0%BD%D0%B0%D0%BC%D0%B8\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EРежимы и управление окнами\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003EРежим тайлинга tiled, плитка.\u003C\u002Fli\u003E\n\u003Cli\u003EРежим pseudo_tiled, псевдо тайлинг. Нечто среднее между floating и tiled.\u003C\u002Fli\u003E\n\u003Cli\u003EРежим floating, плавающий режим.\u003C\u002Fli\u003E\n\u003Cli\u003EРежим fullscreen, Весь экран.\u003C\u002Fli\u003E\n\u003Cli\u003EРежим monocle, окно занимает всё доступное пространство.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Cp\u003EЗажатая \u003Ccode\u003ESuper(win)\u003C\u002Fcode\u003E и клавиши мыши манипулируют окнами: резмер, положение.\u003C\u002Fp\u003E\n\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EКлюч\u003C\u002Fth\u003E\n\u003Cth\u003EОписание\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + a\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПсевдо тайлинг.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + s\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Efloating, плавающий режим.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + d\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eтайлинг.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + f\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Efullscreen.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + m\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереключение режима monocle.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + space\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереключение режима тайлинг\u002Ffloating.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + g\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПриклеить окно.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + z\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EЗакрыть окно.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + -\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EСкрыть\u002Fпоказать окно.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + c\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереход в режим monocle, отключение рамок и отступов.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + v\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EОтключение отступов.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + {↑,↓}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EУменьшение\u002Fувеличение отступов, \u003Ccode\u003Esuper + c\u003C\u002Fcode\u003E в исходное состояние.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + scroll\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EУменьшение\u002Fувеличение отступов, \u003Ccode\u003Esuper + c\u003C\u002Fcode\u003E в исходное состояние.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + {←,→,↑,↓}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПеремещение окна в режиме floating.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + {h,j,k,l}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eперемещение по окнам в режиме tiled.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + {h,j,k,l}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eизменение размера в режиме tiled.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + shift + {h,j,k,l}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eперетаскивание в режиме tiled.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + tab\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереключение окна на текущем теге.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + tab\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереключение на предыдущий тег.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + {1-9,0}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереход на тег.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + {q...o,0}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереход на тег.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + {←,→}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПеремещение по тегам.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + {1-9,0}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EОтправка окна на номер тега.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + ctrl + p\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EСкрыть\u002Fпоказать polybar.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\n\u003Ch2 id=\"запуск-утилит\"\u003E\u003Ca href=\"#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EЗапуск утилит\u003C\u002Fh2\u003E\n\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EКлюч\u003C\u002Fth\u003E\n\u003Cth\u003EОписание\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + shift\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EПереключение раскладки.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + r\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EРестарт bspwm.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + q\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EВыход из bspwm.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + Escape\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EРелоад конфига горячих клавиш sxhkd.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + Return\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EТерминал драйвинг, задаем координаты старта, зажатым ЛКМ.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + Return\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EТерминал на первом теге, в режиме тайлинга, monocle.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + t\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EТерминал в режиме floating.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + r\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003ERanger - консольный менеджер файлов.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + d\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003ERofi - меню.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + w\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EFirefox.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ealt + f\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EThunar.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + Delete\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EБлокировка экрана.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + Delete\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EМеню выхода.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003EPrint\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eскрин с отправкой в \u003Ccode\u003E~\u002FPictures\u002Fscreen\u003C\u002Fcode\u003E(директория должна быть). Копируется в буфер.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + Print\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eскрин в режиме выделения.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + Print\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003Eскрин с задержкой 5 сек. и отправкой в \u003Ccode\u003E~\u002FPictures\u002Fscreen\u003C\u002Fcode\u003E(директория должна быть). Копируется в буфер.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Esuper + alt + m\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EТекущий трек в ncmpcpp.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u003Ccode\u003Ectrl + alt + {c,v}\u003C\u002Fcode\u003E\u003C\u002Ftd\u003E\n\u003Ctd\u003EКопировать\u002Fвставить в терминале.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\n\u003Ch2 id=\"конфигурационные-файлы\"\u003E\u003Ca href=\"#%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EКонфигурационные файлы\u003C\u002Fh2\u003E\n\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EПуть\u003C\u002Fth\u003E\n\u003Cth\u003EОписание\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.config\u002Fbspwm\u002Fbspwmrc\u003C\u002Ftd\u003E\n\u003Ctd\u003EОсновной конфиг.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.config\u002Fbspwm\u003C\u002Ftd\u003E\n\u003Ctd\u003EСкрипты.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u002Fusr\u002Fbin\u002Fbspwm_start\u003C\u002Ftd\u003E\n\u003Ctd\u003EСкрипт автостарта, редактировать от \u003Ccode\u003EROOT\u003C\u002Fcode\u003E. Он вызывается в \u003Ccode\u003E~\u002F.xinitrc\u003C\u002Fcode\u003E и в SDDM \u003Ccode\u003E\u002Fusr\u002Fshare\u002Fxsessions\u002Fbspwm.desktop\u003C\u002Fcode\u003E.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.config\u002Fsxhkd\u002Fsxhkdrc\u003C\u002Ftd\u003E\n\u003Ctd\u003EКонфиг горячих клавиш.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\u002Fetc\u002Fsddm.conf\u003C\u002Ftd\u003E\n\u003Ctd\u003EКонфиг менеджера входа SDDM.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.config\u002Fbspwm\u002Fpolybar\u003C\u002Ftd\u003E\n\u003Ctd\u003EСкрипты и конфиг polybar.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.config\u002Ftint2\u002Ftray.tint2rc\u003C\u002Ftd\u003E\n\u003Ctd\u003EКонфиг tint2 трей. В меню есть gui-конфигуратор (Настройки tint).\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.config\u002Fpicom.conf\u003C\u002Ftd\u003E\n\u003Ctd\u003EДекоратор окон, композитный менеджер.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.Xresources\u003C\u002Ftd\u003E\n\u003Ctd\u003EКонфиг Urxvt терминала. После изменения файла выполнить \u003Ccode\u003Exrdb -merge $HOME\u002F.Xresources\u003C\u002Fcode\u003E.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.colors\u003C\u002Ftd\u003E\n\u003Ctd\u003EПалитры терминала, указывать в \u003Ccode\u003E~\u002F.Xresources\u003C\u002Fcode\u003E строка \u003Ccode\u003E#include \".colors\u002Fsn\"\u003C\u002Fcode\u003E.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.zshrc\u003C\u002Ftd\u003E\n\u003Ctd\u003EКонфиг оболочки $SHELL.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E~\u002F.alias_zsh\u003C\u002Ftd\u003E\n\u003Ctd\u003EАлиасы и функции zsh, сокращения команд терминала.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\n\u003Cp\u003EЭто основа, все остальное в \u003Ccode\u003E~\u002F\u003C\u002Fcode\u003E и \u003Ccode\u003E~\u002F.config\u003C\u002Fcode\u003E.\u003C\u002Fp\u003E\n\u003Ch2 id=\"утилиты\"\u003E\u003Ca href=\"#%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EУтилиты\u003C\u002Fh2\u003E\n\u003Ctable\u003E\n\u003Cthead\u003E\n\u003Ctr\u003E\n\u003Cth\u003EName\u003C\u002Fth\u003E\n\u003Cth\u003EОписание\u003C\u002Fth\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Fthead\u003E\n\u003Ctbody\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eneofetch, fetch\u003C\u002Ftd\u003E\n\u003Ctd\u003Eинформация о системе. \u003Ccode\u003E~\u002F.bin\u002Ffetch\u003C\u002Fcode\u003E.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Elxappearance, qt5ct\u003C\u002Ftd\u003E\n\u003Ctd\u003Eнастройка внешнего вида.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Elxrandr\u003C\u002Ftd\u003E\n\u003Ctd\u003Eразрешение экрана.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Egotop\u003C\u002Ftd\u003E\n\u003Ctd\u003EКонсольный системный монитор.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Egufw\u003C\u002Ftd\u003E\n\u003Ctd\u003Eмежсетевой экран.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eranger, thunar\u003C\u002Ftd\u003E\n\u003Ctd\u003Eфайловые менеджеры.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Efzf\u003C\u002Ftd\u003E\n\u003Ctd\u003Eинкрементальный поиск, \u003Ccode\u003Ezz\u003C\u002Fcode\u003E.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Enano, micro\u003C\u002Ftd\u003E\n\u003Ctd\u003Eконсольный текстовый редактор, привычные клавиши:) ctrl+s - сохранить, ctrl+q - выход и т.д.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eleafpad\u003C\u002Ftd\u003E\n\u003Ctd\u003EGui текстовый редактор.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Exreader\u003C\u002Ftd\u003E\n\u003Ctd\u003Eпросмотр pdf.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eviewnior\u003C\u002Ftd\u003E\n\u003Ctd\u003Eпросмотр изображений.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Encmpcpp, audacious\u003C\u002Ftd\u003E\n\u003Ctd\u003Eмузыкальный плеер.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Ecava\u003C\u002Ftd\u003E\n\u003Ctd\u003Eвизуализатор.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Empv, smplayer\u003C\u002Ftd\u003E\n\u003Ctd\u003Eвидео плеер.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eyoutube-dl, straw-viewer, streamlink\u003C\u002Ftd\u003E\n\u003Ctd\u003Eскачивание, просмотр, просмотр стриминга.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Esimplescreenrecorder\u003C\u002Ftd\u003E\n\u003Ctd\u003EЗапись экрана.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Eflameshot\u003C\u002Ftd\u003E\n\u003Ctd\u003Eскриншоты.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Ekeepassxc\u003C\u002Ftd\u003E\n\u003Ctd\u003Eменеджер паролей.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Everacrypt\u003C\u002Ftd\u003E\n\u003Ctd\u003Eшифрование файлов.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Epavucontrol\u003C\u002Ftd\u003E\n\u003Ctd\u003Eуправление звуком.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Efile-roller\u003C\u002Ftd\u003E\n\u003Ctd\u003Eменеджер архивов.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Etimeshift\u003C\u002Ftd\u003E\n\u003Ctd\u003Eрезервное копирование.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Etmux\u003C\u002Ftd\u003E\n\u003Ctd\u003Eтерминальный мультиплексор.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003Ctr\u003E\n\u003Ctd\u003Erxrun.sh\u003C\u002Ftd\u003E\n\u003Ctd\u003ETmux с 3 табами. \u003Ccode\u003E~\u002F.bin\u002Frxrun.sh\u003C\u002Fcode\u003E.\u003C\u002Ftd\u003E\n\u003C\u002Ftr\u003E\n\u003C\u002Ftbody\u003E\n\u003C\u002Ftable\u003E\n\u003Cp\u003EЕще скрипты: \u003Ccode\u003E~\u002F.bin\u003C\u002Fcode\u003E.\u003C\u002Fp\u003E\n\u003Cp\u003EПолный список пакетов: \u003Ca href=\"https:\u002F\u002Fgithub.com\u002Fctlos\u002Fctlosiso\u002Fblob\u002Fv0.3.1-bdsm\u002Fpackages.x86_64\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Epackages.x86_64\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003Cp\u003EКомментарии приветствуются. Вступай в telegram чат: \u003Ca href=\"https:\u002F\u002Ft.me\u002Fctlos\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Et.me\u002Fctlos\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n","sidebar":"wiki","next":"","prev":"","headings":[{"depth":1,"value":"Ctlos Linux Bspwm 0.3.1","anchor":"#ctlos-linux-bspwm-031"},{"depth":2,"value":"Скачать iso образ","anchor":"#скачать-iso-образ"},{"depth":2,"value":"Оформление","anchor":"#оформление"},{"depth":2,"value":"Панели","anchor":"#панели"},{"depth":3,"value":"Верхний бар, polybar","anchor":"#верхний-бар-polybar"},{"depth":3,"value":"Нижний бар - трей, tint2","anchor":"#нижний-бар---трей-tint2"},{"depth":2,"value":"Горячие клавиши","anchor":"#горячие-клавиши"},{"depth":2,"value":"Режимы и управление окнами","anchor":"#режимы-и-управление-окнами"},{"depth":2,"value":"Запуск утилит","anchor":"#запуск-утилит"},{"depth":2,"value":"Конфигурационные файлы","anchor":"#конфигурационные-файлы"},{"depth":2,"value":"Утилиты","anchor":"#утилиты"}]},"allMarkdownPage":{"edges":[{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fbspwm-0-3-1\u002F","title":"Bspwm v0.3.1"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-8-0\u002F","title":"Xfce v1.8.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fopenbox-1-3-0\u002F","title":"Openbox v1.3.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fbspwm-0-1-0\u002F","title":"Bspwm v0.1.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-6-0\u002F","title":"Xfce v1.6.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fopenbox-1-2-0\u002F","title":"Openbox v1.2.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fi3-1-0-0\u002F","title":"I3 v1.0.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-5-0\u002F","title":"Xfce v1.5.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-4-0\u002F","title":"Xfce v1.4.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fbspwm-0-0-1\u002F","title":"Bspwm v0.0.1"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-3-0\u002F","title":"Xfce v1.3.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fopenbox-2-1\u002F","title":"Openbox,i3 v2.1"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-2-0\u002F","title":"Xfce v1.2.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-1-0\u002F","title":"Xfce v1.1.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fopenbox-2-2\u002F","title":"Openbox,i3 v2.2"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fopenbox-2-0-0\u002F","title":"Openbox,i3 v2.0.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fopenbox-1-0-0\u002F","title":"Openbox v1.0.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fxfce-1-0-0\u002F","title":"Xfce v1.0.0"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002Fdefault\u002F","title":"Xfce v1.0.0"}},{"node":{"path":"\u002Fwiki\u002Fwm\u002Fbspwm\u002F","title":"Ctlos Bspwm"}},{"node":{"path":"\u002Fwiki\u002Fpackages\u002Fother-pkg\u002F","title":"Доп. программы"}},{"node":{"path":"\u002Fwiki\u002Fpackages\u002Fiwd\u002F","title":"Iwd wifi"}},{"node":{"path":"\u002Fwiki\u002Fother\u002Fscreencast\u002F","title":"Screencast"}},{"node":{"path":"\u002Fwiki\u002Fother\u002Fnotes\u002F","title":"Заметки"}},{"node":{"path":"\u002Fwiki\u002Fother\u002Fgrub-uefi\u002F","title":"Grub UEFI"}},{"node":{"path":"\u002Fwiki\u002Fother\u002Fgnupg\u002F","title":"Gnupg"}},{"node":{"path":"\u002Fwiki\u002Fother\u002Fgit-start\u002F","title":"Git Start"}},{"node":{"path":"\u002Fwiki\u002Fother\u002Fctlosiso\u002F","title":"Ctlos iso"}},{"node":{"path":"\u002Fwiki\u002Finstall\u002Fpkg-manager\u002F","title":"Менеджеры пакетов"}},{"node":{"path":"\u002Fwiki\u002Finstall\u002Fnext-install\u002F","title":"После установки"}},{"node":{"path":"\u002Fwiki\u002Finstall\u002Finstall-ctlos\u002F","title":"Установка Ctlos"}},{"node":{"path":"\u002Fwiki\u002Finstall\u002Fctlos-repo\u002F","title":"Репозиторий ctlos"}},{"node":{"path":"\u002Fwiki\u002Fconfig\u002Fvideocfg\u002F","title":"Видео драйвера"}},{"node":{"path":"\u002Fwiki\u002Fconfig\u002Ftrouble\u002F","title":"Решение проблем"}},{"node":{"path":"\u002Fwiki\u002Fconfig\u002Fssh\u002F","title":"Настройка ssh"}},{"node":{"path":"\u002Fwiki\u002Fconfig\u002Frecomend\u002F","title":"Рекомендации"}},{"node":{"path":"\u002Fwiki\u002Fconfig\u002Fautologin\u002F","title":"Автологин"}},{"node":{"path":"\u002Fwiki\u002Fchangelog\u002F","title":"Changelog"}},{"node":{"path":"\u002Fwiki\u002Fbackup\u002Fnetcat\u002F","title":"Netcat, ssh, rsync"}},{"node":{"path":"\u002Fwiki\u002Fbtrfs\u002Fbtrfs-part2\u002F","title":"Btrfs перенос"}},{"node":{"path":"\u002Fwiki\u002Fbtrfs\u002Fbtrfs-part1\u002F","title":"Instalación de btrfs"}},{"node":{"path":"\u002Fwiki\u002Fbackup\u002Ftimeshift-rsync\u002F","title":"Timeshift, rsync"}},{"node":{"path":"\u002Fwiki\u002Fbackup\u002Fsquashfs\u002F","title":"Squashfs"}},{"node":{"path":"\u002Fwiki\u002Fwhois\u002F","title":"Brevemente sobre Killer-OS Linux"}},{"node":{"path":"\u002Fwiki\u002F","title":"Killer-OS Linux Wiki"}}]}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/assets/js/app.fc5ae4d7.js" defer></script><script src="/assets/js/page--src--templates--markdown-page-vue.9aa160b7.js" defer></script><script data-vue-tag="ssr" src="/js/custom.js" data-body="true"></script>
+  </body>
+</html>

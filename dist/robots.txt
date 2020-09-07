@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /wiki/admin/
+Disallow: /wiki/killer-os/
+Disallow: /wiki/search/
+Disallow: /keybase.txt
+Sitemap: https://Killer-OS-Oficial.github.io/sitemap.xml
+Host: Killer-OS-Oficial.github.io

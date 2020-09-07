@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Btrfs перенос - Killer-OS Linux</title><meta name="gridsome:hash" content="8cdcb24eb6b965aabc424dc02a3705a76aba031a"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.20"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="og:url" name="og:url" content="undefined/wiki/other/screencast/"><meta data-vue-tag="ssr" name="description" content="Мануал по восстановлению Arch Linux на btrfs."><meta data-vue-tag="ssr" data-key="og:title" name="og:title" content="Btrfs перенос"><meta data-vue-tag="ssr" data-key="twitter:title" name="twitter:title" content="Btrfs перенос"><meta data-vue-tag="ssr" data-key="og:description" name="og:description" content="Мануал по восстановлению Arch Linux на btrfs."><meta data-vue-tag="ssr" data-key="twitter:description" name="twitter:description" content="Мануал по восстановлению Arch Linux на btrfs."><meta data-vue-tag="ssr" data-key="og:type" name="og:type" content="website"><meta data-vue-tag="ssr" data-key="twitter:card" name="twitter:card" content="summary_large_image"><meta data-vue-tag="ssr" data-key="og:image" name="og:image" content="undefined/img/post.png"><meta data-vue-tag="ssr" data-key="twitter:image" name="twitter:image" content="undefined/img/post.png"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/assets/static/favicon.ce0531f.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicon.ac8d93a.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/assets/static/favicon.b9532cc.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/assets/static/favicon.f22e9f3.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/assets/static/favicon.62d22cb.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/assets/static/favicon.1539b60.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/assets/static/favicon.dc0cdc5.183530a35285eafbfb6a4f56cbff909b.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/assets/static/favicon.7b22250.183530a35285eafbfb6a4f56cbff909b.png"><link rel="preload" href="/assets/css/0.styles.a0db5c52.css" as="style"><link rel="preload" href="/assets/js/app.fc5ae4d7.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--markdown-page-vue.9aa160b7.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.c210b097.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.a29e8ef5.js"><link rel="prefetch" href="/assets/js/page--src--templates--md-page-vue.9d96d72b.js"><link rel="prefetch" href="/assets/js/search.5aebddfd.js"><link rel="prefetch" href="/assets/js/vue-remark--mdpages--donat-md.e133bbea.js"><link rel="prefetch" href="/assets/js/vue-remark--mdpages--get-md.4d3fa1d8.js"><link rel="stylesheet" href="/assets/css/0.styles.a0db5c52.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: light)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true" class="font-sans antialiased text-ui-typo bg-ui-background"><div class="flex flex-col justify-start min-h-screen"><header class="sticky top-0 z-10 w-full border-b border-ui-border"><div class="border-t-2 border-ui-primary"><div class="container"><div class="flex items-center justify-between -mx-2 sm:-mx-4"><div class="flex items-center px-2 sm:px-4"><a href="/" title="Killer-OS Linux" class="flex items-center text-ui-primary active"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 36 36" version="1.1" class="text-ui-primary"><defs><image id="image15" width="36" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAABnUlEQVRYhd2X207CQBCGv2KBUkWDF77/04lEjCJI5dR6MbsWELrbZrYQJ2matJOZL3/n0IUrsxulOB2tWFpAfSA28XKgaBqoowSUmvsdAhY1DaQFNABWCNjgGoD6BuIbUal7aSBbi68IUL9pbC2gyFw5kFHW0sWA9u0ZuKehSiGANsAauKXBWAkBBDBGVOpRs+NCAWXIcKytUigggAkwpKZKIYE+kU5L6+QJCQTwRk2VQgNNgQRZJ165QgMBvCMqea2TNoAmSB0lPvnaACqAOZ7rpA0gkEE5xEOltoB2lEu3clBqAeUePlYl++8UFGiNtHaVrYAtjlrSAsqAJw8/59LVAlqaWC6VluaecqaWtI5BNtYI+HD4bYFH4Asp9gPTUmhnEiTI56iyGQJ/culqKWQPhjFSIzOHf2T8Mo5U0pxDW2CB/JS54k6R9v8zKDVryKrUQz7H3OHfRZrgQCXtSb0xIA8evi+Imsn+Q02FrBUmSUzZ5ufMNsGvmtoKFZQqjTz8xxxN7UanS4flyAgYGKgdp6dyYd4tAjD8Y/sB8vhDm6MZoIAAAAAASUVORK5CYII="></image><linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="399.34" y1="154.86" x2="277.87" y2="154.86" gradientTransform="matrix(0.05625,0,0,0.05625,0,0)"><stop offset="0" style="stop-color:rgb(25.098039%,47.45098%,98.039216%);stop-opacity:1;"></stop><stop offset="1" style="stop-color:rgb(10.588235%,17.647059%,33.72549%);stop-opacity:1;"></stop><stop offset="1" style="stop-color:rgb(0.392157%,0%,0%);stop-opacity:1;"></stop></linearGradient><image id="image28" width="36" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAABmUlEQVRYhe3Xy24TQRCF4c9jO1cCBgzsWES8/xtxUQApIEwUAuKmEBblBssKmR67mgXiSLMaTfWvM6o61fyD6jDJLLaNxtjDfgILtgeaYpZQ55e2KdThAHN8zMHZDmiKu/iKyxyczYFW3TnJgimFN9EEd/ANn/NwNgMaia56gGeZMGwGVNy5wnkuznCg4s4cL7NhGA40xpHosDf5OMOARmIqz/G6BQzDgIo7B3jVBmcY0A7u4bQRC+qBxrgluutFMxr1QMWdhWj3ZqoB6nC4BEofhNcd1qcSouf43hanH6i4cx9PW8OUA29SWcC+LJ/mugmo8zsm/oo75dA/qYToJS566sxaA63GxPOKOsetgSa4LQbi+54ahxpfg1bdqVlPn4iB2QyohOi+/tzaEWF71gpohF0xd2pWjOJO2l69DlRC9Ej/7+pEF56JZb8J0FS487bi22MRJ580upcVd2bqQvSh6MA0d9aBSkws8KPnu8diWF5IdOc6oD117jzCO3GNTt2P1gfaQrTxVHTcuq6W7z4sn1R3/qtGPwGruDu2AGSgXgAAAABJRU5ErkJggg=="></image><image id="image41" width="36" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABmJLR0QA/wD/AP+gvaeTAAABJElEQVRYhe2V0U7CQBBFz7ZFEKH6Bf7/n4GQGJAYFaH4MDMJD6Tt7BKf5iSEsrNZTu9upxAEQRAEQRAEQQnpDmtUQK3XnX4uuYvVw1MGZWbAIzDR3+cSoapQaAIs9TsBLfBAQfIlQpbOC/AB7IFnHctet0SoAZ6AE/CDbNMXsNDavwpZOi2wvhpfqVB2SrlCls4Z+LwaPwK/WstKKUeoAqbIYV7fqK+0NiXjcOcI1UgCAIcbdUtsTkZKXqGE3HkLbHrmbZGU3C3AK2RnpwJ2PfPede4cZ/P1CCXkjpf0p2PskCfOmubdhexRT0gCQ7ypjOtwe+JskHfWHmmEYzARa5yj/sTDCdm2V/q34oL0pG/k7T8aj1CHNL2ZyjQDQh2yzUeP0B87zSuAvgztPQAAAABJRU5ErkJggg=="></image></defs><g id="surface1"><use xlink:href="#image15"></use><path d="M 18.066406 22.226562 L 23.355469 33.828125 L 32.621094 33.828125 L 18.066406 2.195312 Z M 18.066406 22.226562 " style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);"></path><use xlink:href="#image28"></use><path d="M 12.632812 33.828125 L 3.371094 33.828125 L 18.066406 2.195312 L 18.066406 22.011719 Z M 12.632812 33.828125 " style=" stroke:none;fill-rule:nonzero;fill:rgb(25.098039%,47.45098%,98.039216%);fill-opacity:1;"></path><use xlink:href="#image41"></use><path d="M 426.111111 612.222222 L 210.694444 612.222222 L 321.666667 380.069444 Z M 426.111111 612.222222 " transform="matrix(0.05625,0,0,0.05625,0,0)" style="fill-rule:nonzero;fill:rgb(60.784314%,68.235294%,78.431373%);fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;"></path></g></svg></a></div><div class="flex items-center hidden md:flex"><a href="/wiki" title="Wiki" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary active">
+          Wiki
+        </a><a href="/wiki/changelog" title="Changelog" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          Changelog
+        </a><a href="/wiki/whois" title="About" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          About
+        </a><a href="/donat" title="Apoyo" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          Apoyo
+        </a><a href="/get" title="Descargar" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+          Descargar
+        </a></div><div class="drop-menu flex items-center block md:hidden"><div class="has-dropdown p-4 cursor-pointer"><span rel="noopener noreferrer" target="_blank" class="font-medium nav-link text-ui-typo hover:text-ui-primary">MENU</span><div class="dropdown flex flex-col"><a href="/wiki" title="Wiki" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary active">
+              Wiki
+            </a><a href="/wiki/changelog" title="Changelog" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              Changelog
+            </a><a href="/wiki/whois" title="About" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              About
+            </a><a href="/donat" title="Apoyo" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              Apoyo
+            </a><a href="/get" title="Descargar" class="p-4 font-medium nav-link text-ui-typo hover:text-ui-primary">
+              Descargar
+            </a></div></div></div><div class="w-full px-2 sm:px-4"><!----></div><div class="flex items-center px-2 sm:px-4"><div class="drop-web"><div class="has-dropdown py-4 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><div class="dropdown flex flex-col"><a href="https://t.me/Killer_OS_Info" rel="noopener noreferrer" target="_blank">
+                Telegram
+              </a><a href="https://github.com/Killer-OS-Oficial/Killer-OS-Oficial.github.io" rel="noopener noreferrer" target="_blank">
+                Repositorio del Sitio
+              </a></div></div></div><button role="button" aria-label="Toggle dark/light" class="toggle-theme ml-2 sm:ml-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></div></div></header><main class="container relative flex flex-wrap justify-start flex-1 w-full bg-ui-background"><!----><div class="w-full pb-24"><div class="flex flex-wrap items-start justify-start"><div class="sidebar-content order-2 w-full md:w-1/4 sm:pl-4 md:pl-6 lg:pl-8 sticky overflow-y-auto overflow-x-hidden" style="top:4rem;height:calc(100vh - 4rem);"><div class="mt-8 sm:pl-4 md:pl-6 md:pt-12 lg:pl-8 sm:pb-16 sm:border-l border-ui-border md:mt-0"><h3 class="pt-0 mt-0 text-sm tracking-wide uppercase border-none">Contenido</h3><div><ul><li class="font-semibold depth-2"><a href="/wiki/btrfs/btrfs-part2/#перенос-на-раздел-btrfs-rsync" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Перенос на раздел btrfs, rsync
+        </a></li><li class="border-t border-dashed border-ui-border pt-2 mt-2 font-semibold depth-2"><a href="/wiki/btrfs/btrfs-part2/#снапшот-на-другой-разделдиск" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Снапшот на другой раздел/диск
+        </a></li><li class="depth-3"><a href="/wiki/btrfs/btrfs-part2/#отправка-по-ssh" class="relative flex items-center py-1 text-sm transition transform hover:text-ui-primary hover:translate-x-1 pl-2"><span class="absolute w-2 h-2 -ml-3 rounded-full opacity-0 bg-ui-primary transition transform scale-0 origin-center"></span>
+          Отправка по ssh
+        </a></li></ul></div></div></div><div class="order-1 w-full md:w-3/4"><!----><p class="inline-block mt-8 border-b border-dashed border-ui-primary text-ui-primary">
+           Fecha de modificación: 13.08.2020
+        </p><div class="content"><h1 id="btrfs-перенос-восстановление"><a href="#btrfs-%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" aria-hidden="true"><span class="icon icon-link"></span></a>Btrfs перенос, восстановление</h1>
+<div class="responsive-container">
+  <iframe class="responsive-iframe w-full h-full top-0 left-0 border-0" src="https://www.youtube.com/embed/97ui81gWUcU" style="border:0;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2 id="перенос-на-раздел-btrfs-rsync"><a href="#%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81-%D0%BD%D0%B0-%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB-btrfs-rsync" aria-hidden="true"><span class="icon icon-link"></span></a>Перенос на раздел btrfs, rsync</h2>
+<pre class="language-bash"><code class="language-bash">pacman -S <span class="token function">rsync</span> btrfs-progs arch-install-scripts</code></pre>
+<p><code>lsblk</code> - подсветить все разделы что бы определиться что монтировать.</p>
+<p>При необходимости разбить диск, -z говорит обнулить таблицу разделов.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">cfdisk</span> -z /dev/sda</code></pre>
+<p>Монтируем.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mount</span> /dev/sda6 /mnt</code></pre>
+<p>Создадим три подтома root, домашний каталог пользователя и подтом для хранения.</p>
+<pre class="language-bash"><code class="language-bash">btrfs subvolume create /mnt/@_root
+btrfs subvolume create /mnt/@_home
+btrfs subvolume create /mnt/@_snapshots
+
+btrfs subvolume list /mnt</code></pre>
+<p>Для переноса смонтируйте резервную систему и перенесите ее.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> /mnt/dump
+<span class="token function">mount</span> /dev/sdb1 /mnt/dump</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rsync</span> -avAXHP --delete --delete-excluded --exclude<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"/dev/*"</span>,<span class="token string">"/proc/*"</span>,<span class="token string">"/sys/*"</span>,<span class="token string">"/tmp/*"</span>,<span class="token string">"/run/*"</span>,<span class="token string">"/mnt/*"</span>,<span class="token string">"/media/*"</span>,<span class="token string">"/lost+found"</span>,<span class="token string">"/var/lib/pacman/sync/*"</span>,<span class="token string">"/var/cache/*"</span>,<span class="token string">"/var/tmp/*"</span>,<span class="token string">"/boot/*"</span>,<span class="token string">"/home/*"</span><span class="token punctuation">}</span> /mnt/dump/@/* /mnt/@_root/</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rsync</span> -avAXHP --delete --delete-excluded --exclude<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"/dev/*"</span>,<span class="token string">"/proc/*"</span>,<span class="token string">"/sys/*"</span>,<span class="token string">"/tmp/*"</span>,<span class="token string">"/run/*"</span>,<span class="token string">"/mnt/*"</span>,<span class="token string">"/media/*"</span>,<span class="token string">"/lost+found"</span>,<span class="token string">"/var/lib/pacman/sync/*"</span>,<span class="token string">"/var/cache/*"</span>,<span class="token string">"/var/tmp/*"</span>,<span class="token string">"/boot/*"</span>,<span class="token string">"/home/*"</span><span class="token punctuation">}</span> /mnt/dump/@home/* /mnt/@_home/</code></pre>
+<p>И отмонтируем корень ФС.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">umount</span> /mnt
+<span class="token function">rm</span> -rf /mnt/dump</code></pre>
+<p>Чтобы монтировать подтом подобно обычному разделу диска, команде mount нужно указывать опцию subvol=PATH. PATH - путь относительно корня ФС. Монтируем корень. Сжатие zstd, или lzo.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mount</span> -o <span class="token assign-left variable">subvol</span><span class="token operator">=</span>@,compress<span class="token operator">=</span>zstd /dev/sda6 /mnt</code></pre>
+<p>Какие рекомендуемые варианты для установки на SD-карту, или медленный SSD-накопитель? В <code>/etc/fstab</code> См. <a href="https://wiki.debian.org/Btrfs" target="_blank" rel="nofollow noopener noreferrer">https://wiki.debian.org/Btrfs</a>.</p>
+<pre class="language-bash"><code class="language-bash">/dev/sdaX / btrfs x-systemd.device-timeout<span class="token operator">=</span><span class="token number">0</span>,noatime,compress<span class="token operator">=</span>lzo,commit<span class="token operator">=</span><span class="token number">0</span>,ssd_spread,autodefrag <span class="token number">0</span> <span class="token number">0</span>
+
+<span class="token assign-left variable">UUID</span><span class="token operator">=</span><span class="token operator">&lt;</span>the_device_uuid<span class="token operator">></span> /mount/point/ btrfs noauto,compress<span class="token operator">=</span>lzo,noatime,autodefrag <span class="token number">0</span> <span class="token number">0</span></code></pre>
+<p>Создаём директорию и монтируем в неё наш будущий каталог пользователей, если boot раздел отдеольно, нужно его тоже смонтироват в <code>/mnt/boot</code>.</p>
+<p>Если нужно <code>mkdir /mnt/home</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mount</span> -o <span class="token assign-left variable">subvol</span><span class="token operator">=</span>@home,compress<span class="token operator">=</span>zstd /dev/sda6 /mnt/home</code></pre>
+<p>Если нужно <code>mkdir /mnt/snapshots</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mount</span> -o <span class="token assign-left variable">subvol</span><span class="token operator">=</span>@snapshots,compress<span class="token operator">=</span>zstd /dev/sda6 /mnt/snapshots
+
+<span class="token function">mount</span> -t proc none /mnt/proc
+<span class="token function">mount</span> -t sysfs none /mnt/sys
+<span class="token function">mount</span> -o <span class="token builtin class-name">bind</span> /dev /mnt/dev
+
+<span class="token function">cp</span> -L /etc/resolv.conf /mnt/etc
+
+<span class="token function">swapon</span> /dev/sda3</code></pre>
+<p>Начиная с ядра 5.0 можно создать swap-файл, swap-файл должен располагаться целиком на одном устройстве, создаваться с отключенным COW и сжатием.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> /swap             <span class="token comment"># создаем пустой файл /swap</span>
+<span class="token function">chmod</span> go-r /swap        <span class="token comment"># swap должен иметь права 600</span>
+chattr +C /swap         <span class="token comment"># отключаем COW, сжатие тоже отключается</span>
+fallocate /swap -l4g    <span class="token comment"># файл 4Gb</span>
+<span class="token function">mkswap</span> /swap
+<span class="token function">swapon</span> /swap</code></pre>
+<p>Теперь нужно проинициализировать систему. Редактируем FSTAB, или запускаем genfstab.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rm</span> /mnt/etc/fstab
+genfstab -pU /mnt <span class="token operator">></span> /mnt/etc/fstab</code></pre>
+<p>Переходим в нашу новую систему.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">chroot</span> /mnt /bin/bash</code></pre>
+<p>Генерация initramfs с помощью mkinicpio.</p>
+<pre class="language-bash"><code class="language-bash">mkinitcpio -p linux</code></pre>
+<p>Установить загрузчик GRUB2 и сконфигурировать его.</p>
+<pre class="language-bash"><code class="language-bash">grub-install /dev/sdХ
+<span class="token function">grub-mkconfig</span> -o /boot/grub/grub.cfg</code></pre>
+<p><code>exit</code> или "Ctrl + D" выйти из chroot.</p>
+<p>Теперь  нужно все размонтировать.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">umount</span> /mnt/home
+<span class="token function">umount</span> /mnt/snapshots
+<span class="token function">umount</span> /mnt
+reeboot</code></pre>
+<hr>
+<h2 id="снапшот-на-другой-разделдиск"><a href="#%D1%81%D0%BD%D0%B0%D0%BF%D1%88%D0%BE%D1%82-%D0%BD%D0%B0-%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B9-%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B4%D0%B8%D1%81%D0%BA" aria-hidden="true"><span class="icon icon-link"></span></a>Снапшот на другой раздел/диск</h2>
+<ul>
+<li><a href="https://btrfs.wiki.kernel.org/index.php/Incremental_Backup" target="_blank" rel="nofollow noopener noreferrer">Incremental_Backup</a></li>
+<li><a href="https://github.com/masc3d/btrfs-sxbackup" target="_blank" rel="nofollow noopener noreferrer">btrfs-sxbackup</a></li>
+<li><a href="https://github.com/YHNdnzj/btrfs-snapshot" target="_blank" rel="nofollow noopener noreferrer">btrfs-snapshot</a></li>
+</ul>
+<p>Монтируем основной раздел.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> /mnt/arch
+<span class="token function">mount</span> /dev/sda6 /mnt/arch</code></pre>
+<p>Монтируем раздел/диск для сброса снапшота.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> /mnt/dump
+<span class="token function">mount</span> /dev/sda8 /mnt/dump</code></pre>
+<p>Нужно создавать снапшоты, только для чтения(readonly), требует <code>send</code>. Для отправки на другие узлы.</p>
+<blockquote>
+<p>Сбрасываем все из кэша на диск <code>sync</code>, ВАЖНО.</p>
+</blockquote>
+<pre class="language-bash"><code class="language-bash">btrfs subvolume snapshot -r /mnt/arch/@ /mnt/arch/@_BACKUP
+<span class="token function">sync</span>
+btrfs subvolume snapshot -r /mnt/arch/@home /mnt/arch/@home_BACKUP
+<span class="token function">sync</span></code></pre>
+<p>Переносим снапшоты. Можно send в файл <code>btrfs send /mnt/arch/@_BACKUP -f /dump.sn</code>, receive из файла <code>btrfs receive /mnt/dump/ -f /dump.sn</code>.</p>
+<pre class="language-bash"><code class="language-bash">btrfs send /mnt/arch/@_BACKUP <span class="token operator">|</span> btrfs receive /mnt/dump/
+btrfs send /mnt/arch/@home_BACKUP <span class="token operator">|</span> btrfs receive /mnt/dump/</code></pre>
+<p>Инкрементальные readonly снимки.</p>
+<pre class="language-bash"><code class="language-bash">btrfs subvolume snapshot -r /mnt/arch/@ /mnt/arch/@_BACKUP_new
+<span class="token function">sync</span>
+btrfs subvolume snapshot -r /mnt/arch/@home /mnt/arch/@home_BACKUP_new
+<span class="token function">sync</span></code></pre>
+<p>Создаём разность между снимками.</p>
+<pre class="language-bash"><code class="language-bash">btrfs send -p /mnt/arch/@_BACKUP /mnt/arch/@_BACKUP_new <span class="token operator">|</span> btrfs receive /mnt/dump/
+btrfs send -p /mnt/arch/@home_BACKUP /mnt/arch/@home_BACKUP_new <span class="token operator">|</span> btrfs receive /mnt/dump/</code></pre>
+<p>Просмотрим листинг.</p>
+<pre class="language-bash"><code class="language-bash">btrfs subvolume list /mnt/dump</code></pre>
+<h3 id="отправка-по-ssh"><a href="#%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE-ssh" aria-hidden="true"><span class="icon icon-link"></span></a>Отправка по ssh</h3>
+<p>Локально: генерируем ключи, создаём <code>~/.ssh/config</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># генерация пары ключий, публичный(отправляем на сервер)</span>
+<span class="token comment"># id_rsa.pub</span>
+ssh-keygen -t rsa -b <span class="token number">4096</span> -C <span class="token string">"lol@gmail.com"</span>
+
+<span class="token comment"># nano ~/.ssh/config</span>
+Host office
+    HostName <span class="token number">192.168</span>.100.51
+    Port <span class="token number">22</span>
+    User <span class="token builtin class-name">test</span></code></pre>
+<pre class="language-bash"><code class="language-bash">PasswordAuthentication <span class="token function">yes</span>                 <span class="token comment"># на сервере /etc/ssh/sshd_config</span>
+systemctl restart sshd
+ssh-copy-id -i ~/.ssh/id_rsa.pub office    <span class="token comment"># отправка ключа на сервер</span>
+<span class="token comment"># на сервере /etc/ssh/sshd_config</span>
+PermitRootLogin no
+PasswordAuthentication no                  <span class="token comment"># отключим доступ по паролю, всем.</span>
+PubkeyAuthentication <span class="token function">yes</span>
+AuthorizedKeysFile .ssh/authorized_keys
+systemctl restart sshd
+systemctl <span class="token builtin class-name">enable</span> sshd
+
+btrfs send /mnt/arch/@_BACKUP <span class="token operator">|</span> <span class="token function">ssh</span> office <span class="token string">"btrfs receive /mnt/backups"</span>
+<span class="token comment"># или</span>
+btrfs send /mnt/arch/@_BACKUP <span class="token operator">|</span> <span class="token function">ssh</span> -p <span class="token number">22</span> test@192.168.100.51 <span class="token string">"btrfs receive /mnt/backups"</span></code></pre>
+<p>Пример скрипта - инкрементальный, взято с (ubuntu.ru/wiki).</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># точки монтирования</span>
+<span class="token assign-left variable">src</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp -d <span class="token string">"<span class="token variable">${TMPDIR<span class="token operator">:-</span><span class="token operator">/</span>tmp<span class="token operator">/</span>}</span><span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> <span class="token number">0</span><span class="token variable">)</span></span>.XXXXXXXXXXXX"</span><span class="token variable">)</span></span>
+<span class="token assign-left variable">dst</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>mktemp -d <span class="token string">"<span class="token variable">${TMPDIR<span class="token operator">:-</span><span class="token operator">/</span>tmp<span class="token operator">/</span>}</span><span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> <span class="token number">0</span><span class="token variable">)</span></span>.XXXXXXXXXXXX"</span><span class="token variable">)</span></span>
+<span class="token comment">#монтируем</span>
+<span class="token function">mount</span> /dev/sda2 <span class="token variable">$src</span>
+<span class="token function">mount</span> /dev/sdb2 <span class="token variable">$dst</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -e <span class="token variable">$src</span>/root_BCKP <span class="token punctuation">]</span>
+<span class="token keyword">then</span> <span class="token comment"># первый запуск полный бекап</span>
+  <span class="token comment"># Создаем снимок read-only</span>
+  btrfs subvolume snapshot -r <span class="token variable">$src</span>/@ <span class="token variable">$src</span>/root_BCKP
+  <span class="token function">sync</span>
+  <span class="token comment"># переносим</span>
+  btrfs send <span class="token variable">$src</span>/root_BCKP <span class="token operator">|</span> btrfs receive <span class="token variable">$dst</span>/
+<span class="token keyword">else</span> <span class="token comment"># повторный запуск, инкрементальный</span>
+  <span class="token comment"># Переименовываем</span>
+  <span class="token function">mv</span> <span class="token variable">$src</span>/root_BCKP <span class="token variable">$src</span>/root_BCKP_prev
+  <span class="token function">mv</span> <span class="token variable">$dst</span>/root_BCKP <span class="token variable">$dst</span>/root_BCKP_prev
+  <span class="token comment"># Создаем текущий</span>
+  btrfs subvolume snapshot -r <span class="token variable">$src</span>/@ <span class="token variable">$src</span>/root_BACKUP
+  <span class="token function">sync</span>
+  <span class="token comment"># инкрементальный бекап</span>
+  btrfs send -p <span class="token variable">$src</span>/root_BCKP_prev <span class="token variable">$src</span>/root_BACKUP <span class="token operator">|</span> btrfs receive <span class="token variable">$dst</span>/
+<span class="token keyword">fi</span>
+<span class="token comment"># В $dst/root_BACKUP копия корня.</span>
+<span class="token function">umount</span> <span class="token variable">$src</span>
+<span class="token function">umount</span> <span class="token variable">$dst</span>
+<span class="token comment"># Удаляем точки монтирования</span>
+<span class="token function">rmdir</span> <span class="token variable">$src</span>
+<span class="token function">rmdir</span> <span class="token variable">$dst</span></code></pre>
+<blockquote>
+<p>Всё это работает и в обратном порядке.</p>
+</blockquote>
+<p>Удаляем или переименовываем <code>mv</code>.</p>
+<pre class="language-bash"><code class="language-bash">btrfs subvolume delete /mnt/dump/@_BACKUP
+btrfs subvolume delete /mnt/dump/@home_BACKUP</code></pre>
+<p>Переименовываем новые snapshot(ы).</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mv</span> /mnt/dump/@_BACKUP_new /mnt/dump/@
+<span class="token function">mv</span> /mnt/dump/@home_BACKUP_new /mnt/dump/@home</code></pre>
+<blockquote>
+<p>Свойства. Сейчас они в ro - read-only(только чтение), изменим на rw - read-write(чтение-завись). Значения изменяются так: <code>ro true</code>, <code>ro false</code>.</p>
+</blockquote>
+<pre class="language-bash"><code class="language-bash">btrfs property get /mnt/dump/@        <span class="token comment"># посмотр свойств</span>
+
+btrfs property <span class="token builtin class-name">set</span> /mnt/dump/@ ro <span class="token boolean">false</span>
+btrfs property <span class="token builtin class-name">set</span> /mnt/dump/@home ro <span class="token boolean">false</span>
+
+btrfs subvolume show /mnt/dump/@      <span class="token comment"># информация</span></code></pre>
+<p>Удаляем, если нужно.</p>
+<pre class="language-bash"><code class="language-bash">btrfs subvolume delete /mnt/arch/@_BACKUP
+btrfs subvolume delete /mnt/arch/@home_BACKUP</code></pre>
+<p>Отмонтируем.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">umount</span> /mnt/arch
+<span class="token function">umount</span> /mnt/dump
+
+<span class="token function">rmdir</span> /mnt/<span class="token punctuation">{</span>arch,dump<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Восстановление, как и выше, грузимся с live-usb, или с другой системы. Монтируем раздел для восстановления, поврежденный и раздел с backup, восстанавливаем снапшоты.</p>
+</blockquote>
+<p>Монтируем файловую систему, для пересоздания fstab и инициализации.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mount</span> -o <span class="token assign-left variable">subvol</span><span class="token operator">=</span>@,compress<span class="token operator">=</span>zstd /dev/sda8 /mnt
+<span class="token function">ls</span> /mnt
+<span class="token function">mount</span> -o <span class="token assign-left variable">subvol</span><span class="token operator">=</span>@home,compress<span class="token operator">=</span>zstd /dev/sda8 /mnt/home</code></pre>
+<p>Если boot раздел отдеольно, то нужно его тоже смонтироват в /mnt/boot и все другие subvolume.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mount</span> /dev/sda2 /mnt/boot
+
+<span class="token function">mount</span> -t proc none /mnt/proc
+<span class="token function">mount</span> -t sysfs none /mnt/sys
+<span class="token function">mount</span> -o <span class="token builtin class-name">bind</span> /dev /mnt/dev
+
+<span class="token function">cp</span> -L /etc/resolv.conf /mnt/etc
+
+<span class="token function">swapon</span> /dev/sda3</code></pre>
+<p>Начиная с ядра 5.0 можно создать swap-файл, swap-файл должен располагаться целиком на одном устройстве, создаваться с отключенным COW и сжатием.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> /swap             <span class="token comment"># создаем пустой файл /swap</span>
+<span class="token function">chmod</span> go-r /swap        <span class="token comment"># swap должен иметь права 600</span>
+chattr +C /swap         <span class="token comment"># отключаем COW, сжатие тоже отключается</span>
+fallocate /swap -l4g    <span class="token comment"># файл 4Gb</span>
+<span class="token function">mkswap</span> /swap
+<span class="token function">swapon</span> /swap</code></pre>
+<p>Редактируем FSTAB, или запускаем genfstab.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rm</span> /mnt/etc/fstab
+genfstab -pU /mnt <span class="token operator">></span> /mnt/etc/fstab
+
+<span class="token function">nano</span> /mnt/etc/fstab</code></pre>
+<p>Переходим в нашу новую систему.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">chroot</span> /mnt</code></pre>
+<p>Или zsh.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">chroot</span> /mnt /bin/zsh</code></pre>
+<p>Перегенерироваь.</p>
+<pre class="language-bash"><code class="language-bash">mkinitcpio -p linux</code></pre>
+<p>Установить загрузчик GRUB2 и сконфигурировать его.</p>
+<pre class="language-bash"><code class="language-bash">grub-install /dev/sdХ
+<span class="token function">grub-mkconfig</span> -o /boot/grub/grub.cfg</code></pre>
+<p>Инициализируем ключи и обновим, если требуется.</p>
+<pre class="language-bash"><code class="language-bash">pacman-key --init <span class="token operator">&amp;&amp;</span> pacman-key --populate <span class="token operator">&amp;&amp;</span> pacman-key --refresh-keys <span class="token operator">&amp;&amp;</span> pacman -Syy</code></pre>
+<p><code>exit</code> или "Ctrl + D" выйти из chroot.</p>
+<p>Теперь  нужно все размонтировать.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">umount</span> -R /mnt
+reeboot</code></pre>
+<blockquote>
+<p>Ещё больше разжёвано на <a href="https://help.ubuntu.ru/wiki/btrfs" target="_blank" rel="nofollow noopener noreferrer">ubuntu.ru/wiki</a>.</p>
+</blockquote>
+</div><div class="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-ui-border"><div><div class="flex flex-col sm:flex-row justify-between items-center"><a href="/wiki/btrfs/btrfs-part1/" class="mb-4 sm:mb-0 flex items-center mr-auto text-ui-primary font-bold px-4 py-2 border border-ui-border rounded-lg hover:bg-ui-primary hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Instalación de btrfs
+    </a><!----></div></div></div></div></div></div></main></div><!----></div>
+    <script src="/assets/js/app.fc5ae4d7.js" defer></script><script src="/assets/js/page--src--templates--markdown-page-vue.9aa160b7.js" defer></script><script data-vue-tag="ssr" src="/js/custom.js" data-body="true"></script>
+  </body>
+</html>
