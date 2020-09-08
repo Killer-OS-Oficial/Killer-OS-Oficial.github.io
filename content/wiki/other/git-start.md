@@ -4,174 +4,174 @@ sidebar: 'wiki'
 date_up: 2020-08-13
 ---
 
-# Настройка git и использование
+# Configurando git y usando
 
-## Настройка
+## Configurar
 
-Конфигурация.
-
-```bash
-git config --global user.name "ctlos"
-git config --global user.email "ctlos@protonmail.com"
-```
-
-Генерация ssh-ключей.
+Configuración.
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "ctlos@protonmail.com"
+git config --global user.name "Killer-Hacker-Oficial"
+git config --global user.email "killer_hacker_oficial_98@protonmail.com"
 ```
 
-Забрать ключ в `~/.ssh` имя `id_rsa.pub`.
+Generando claves ssh.
 
-## Использование
+```bash
+ssh-keygen -t rsa -b 4096 -C "killer_hacker_oficial_98@protonmail.com"
+```
 
-Инициализация.
+Recoge la llave`~/.ssh` nombre `id_rsa.pub`.
+
+## Utilizando
+
+Inicialización.
 
 ```bash
 git init
 ```
 
-Статус.
+Estado.
 
 ```bash
 git status
 ```
 
-Игнорирование файлов и каталогов `.gitignore`.
+Ignorar archivos y directorios `.gitignore`.
 
-Добавление изменений.
+Añadiendo cambios.
 
 ```bash
 git add .
-git commit -m "test"
+git commit -m "Upload"
 ```
 
-## Работа с github
+## Trabajando con github
 
-Создание репозитория на github.com.
+Creando un repositorio en github.com.
 
 ```bash
-git remote add origin https://github.com/ctlos/ctlosiso
-git remote add origin git@github.com:ctlos/ctlosiso.git
+git remote add origin https://github.com/Killer-OS-Oficial/Killer-OS
+git remote add origin git@github.com:Killer-OS-Oficial/Killer-OS.git
 ```
 
-Отменить регистрацию удаленного репозитария.
+Anule el registro del repositorio remoto.
 
 ```bash
 git remote rm origin
 ```
 
-Отправка на github.com.
+Enviar a github.com.
 
 ```bash
 git push -u origin master
 git push --set-upstream origin master
 ```
 
-Клонирование.
+Clonación.
 
 ```bash
-git clone https://github.com/ctlos/ctlosiso
+git clone https://github.com/Killer-OS-Oficial/Killer-OS
 ```
 
 Ssh.
 
 ```bash
-git clone git@github.com:ctlos/ctlosiso.git
+git clone git@github.com:Killer-OS-Oficial/Killer-OS.git
 ```
 
-Или ветку.
+O una rama.
 
 ```bash
-git clone -b openbox git@github.com:ctlos/ctlosiso.git
+git clone -b I3 git@github.com:Killer-OS-Oficial/Killer-OS.git
 ```
 
-Список репозиториев.
+Lista de repositorios.
 
 ```bash
 git remote
 ```
 
-Отправка на github.
+Enviar a github.
 
 ```bash
-git push ctlosiso master
+git push Killer-OS master
 ```
 
-Версия проекта tag.
+Etiqueta de versión del proyecto.
 
 ```bash
 git tag -f v0.1.0
 
 git push origin v0.1.0
 
-git tag -a 1.0.0 -m "Release of version 1.0.0"
+git tag -a 1.0.0 -m "Lanzamiento de versión 1.0"
 git push --tags
 ```
 
-Релиз с созданием тега.
+Lanzamiento con creación de etiqueta.
 
 ```bash
 pacman -S hub
-# черновик
-hub release create -d -a ctlos.iso -m "release test" -t "openbox" tag-test
-# публикация с привязкой к ветки и создание тега
-hub release create -a out/ctlos.iso -m "ctlos openbox 1.3.0" -t "openbox" v1.3.0-ob
+# sequía
+hub release create -d -a Killer-OS.iso -m "release" -t "BSPWM" tag-test
+# publicación vinculada a una rama y creación de una etiqueta
+hub release create -a out/Killer-OS.iso -m "Killer-OS BSPWM 1.0" -t "BSPEM" v1.0
 # script ~/.bin/grel.sh
-grel.sh 1.3.0-ob openbox
+grel.sh 1.o BSPWM
 ```
 
-Новая ветка.
+Nueva rama.
 
 ```bash
 git branch work
 ```
 
-Просмотр веток локально.
+Explore las ramas localmente.
 
 ```bash
 git branch
 ```
 
-Просмотр веток и удаленных.
+Ver ramas y eliminar.
 
 ```bash
 git branch -a
 ```
 
-Создание локальных веток из удаленных.
+Creando ramas locales a partir de las remotas.
 
 ```bash
-git branch openbox origin/openbox
-git branch xfce origin/xfce
-git branch budgie origin/budgie
+git branch I3 origin/I3
+git branch work origin/work
+git branch Dev origin/Dev
 ```
 
-Отправка ветки на github.
+Enviar una rama a github.
 
 ```bash
-git push origin dev
+git push origin Dev
 ```
 
-Перемещение по веткам.
+Moviéndose a través de las ramas.
 
 ```bash
 git checkout work
 ```
 
-Получить удаленную ветку.
+Consigue una rama remota.
 
 ```bash
 git checkout -b bspwm origin/bspwm
 ```
 
-Слияние веток. Перед этим переключить на ветку в которую сливаем.
+Fusión de ramas. Antes de eso, cambie a la rama en la que nos fusionamos.
 
 ```bash
 git merge work
 ```
 
-Удаление веток.
+Eliminando ramas.
 
 ```bash
 git branch -D work
@@ -179,13 +179,13 @@ git branch -D work
 git push origin -d work
 ```
 
-Просмотр изменений.
+Ver cambios.
 
 ```bash
 git log
 ```
 
-Откат(предварительно, получить хэш).
+Revertir (anteriormente, obtener un hash).
 
 ```bash
 git reset --hard a3775a5485af0af20375cedf46112db5f813322a

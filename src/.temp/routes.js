@@ -13,38 +13,6 @@ export default [
     component: c1
   },
   {
-    path: "/wiki/changelog/xfce-1-0-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-1-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-2-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-3-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-4-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-5-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-6-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/xfce-1-8-0/",
-    component: c1
-  },
-  {
     path: "/wiki/other/notes/",
     component: c1
   },
@@ -97,31 +65,7 @@ export default [
     component: c1
   },
   {
-    path: "/wiki/changelog/openbox-1-0-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/openbox-1-2-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/openbox-1-3-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/openbox-2-0-0/",
-    component: c1
-  },
-  {
     path: "/wiki/config/recomend/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/openbox-2-1/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/openbox-2-2/",
     component: c1
   },
   {
@@ -129,15 +73,7 @@ export default [
     component: c1
   },
   {
-    path: "/wiki/other/ctlosiso/",
-    component: c1
-  },
-  {
     path: "/wiki/backup/netcat/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/i3-1-0-0/",
     component: c1
   },
   {
@@ -145,15 +81,7 @@ export default [
     component: c1
   },
   {
-    path: "/wiki/changelog/bspwm-0-0-1/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/bspwm-0-1-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/bspwm-0-3-1/",
+    path: "/wiki/changelog/bspwm-1-0/",
     component: c1
   },
   {

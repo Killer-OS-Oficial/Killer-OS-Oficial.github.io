@@ -4,19 +4,19 @@ sidebar: 'wiki'
 date_up: 2020-08-13
 ---
 
-# GnuPG использование
+# Uso de GnuPG
 
-## Цифровые подписи
+## Firmas digitales
 
-[wiki.archlinux.org](https://wiki.archlinux.org/index.php/GnuPG_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)).
+[wiki.archlinux.org](https://wiki.archlinux.org/index.php/GnuPG).
 
-Генерация, создание пары ключей.
+Generación, creación de un par de llaves.
 
 ```bash
 gpg --full-gen-key
 ```
 
-Просмотр списка ключей.
+Ver una lista de claves.
 
 ```bash
 gpg --list-keys
@@ -24,100 +24,100 @@ gpg --list-secret-keys
 gpg --list-public-keys
 ```
 
-Id ключей.
+Identificación de clave.
 
 ```bash
 gpg --list-public-keys --keyid-format LONG
 gpg --list-secret-keys --keyid-format LONG
 ```
 
-Удалить ключ.
+Eliminar clave.
 
 ```bash
 gpg --delete-secret-keys 98F76D97B786E6A3
 gpg --delete-keys 98F76D97B786E6A3
 ```
 
-Редактировать ключ.
+Editar clave.
 
 ```bash
-gpg --expert --edit-key ctlos@protonmail.com
+gpg --expert --edit-key killer_hacker_oficial_98@protonmail.com
 ```
 
-Экспорт открытого ключа в текстовом виде.
+Exporta la clave pública en forma de texto.
 
 ```bash
 gpg --armor --output pubkey.txt --export 98F76D97B786E6A3
 ```
 
-Экспорт закрытого ключа в текстовом виде.
+Exporta la clave privada como texto.
 
 ```bash
 gpg --armor --output privkey.txt --export-secret-keys 98F76D97B786E6A3
 ```
 
-Экспорт Certificate.
+Certificado de exportación.
 
 ```bash
 gpg -a --gen-revoke 98F76D97B786E6A3 > rev_cert.gpg
 ```
 
-Экспорт открытого ключа на keyserver.
+Exportar la clave pública al servidor de claves.
 
 ```bash
 gpg --keyserver keys.gnupg.net --send-keys 8123459
 ```
 
-Импорт открытого ключа из файла.
+Importar una clave pública de un archivo.
 
 ```bash
 gpg --import key.txt
 ```
 
-Или по номеру.
+O por número.
 
 ```bash
 gpg --recv-keys 98F76D97B786E6A3
 ```
 
-Импорт закрытого ключа.
+Importación de clave privada.
 
 ```bash
 gpg --allow-secret-key-import --import privkey.txt
 ```
 
-Импорт открытого ключа с keyserver.
+Importación de una clave pública desde el servidor de claves.
 
 ```bash
 gpg --keyserver keys.gnupg.net --recv-keys 98F76D97B786E6A3
 ```
 
-Поиск.
+Buscar.
 
 ```bash
 gpg --keyserver keys.gnupg.net --search-keys mail@example.com
 ```
 
-Обновление.
+Actualizar.
 
 ```bash
 gpg --keyserver keys.gnupg.net --refresh-keys
 ```
 
-Пример подписи и проверки подписи.
+Un ejemplo de firma y verificación de firma.
 
 ```bash
-gpg --detach-sign --no-armor ctlos.iso
-gpg --verify ctlos.iso.sig ctlos.iso
+gpg --detach-sign --no-armor killer-os.iso
+gpg --verify killer-os.iso.sig killer-os.iso
 ```
 
-Зашифровать файл.
+Cifre el archivo.
 
 ```bash
 gpg --encrypt-files -r 98F76D97B786E6A3 secret.tar
 ```
 
-Расшифровать файл.
+Descifra el archivo.
 
 ```bash
 gpg -d secret.tar.asc
@@ -127,7 +127,7 @@ gpg -d secret.tar.asc > secret.tar
 gpg -o secret.tar --decrypt secret.tar.asc
 ```
 
-Шифровать каталог.
+Cifre el directorio.
 
 ```bash
 gpgtar --encrypt --output secret.tar -r 98F76D97B786E6A3 dir/
@@ -135,13 +135,13 @@ gpgtar --encrypt --output secret.tar -r 98F76D97B786E6A3 dir/
 gpgtar -c -o secret.tar dir/
 ```
 
-Просмотр.
+Ver.
 
 ```bash
 gpgtar -t secret.tar
 ```
 
-Расшифровать каталог.
+Descifrar directorio.
 
 ```bash
 gpgtar -d secret.tar

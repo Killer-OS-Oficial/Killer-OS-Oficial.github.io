@@ -5,9 +5,9 @@ prev: '/wiki/packages/other-pkg/'
 date_up: 2020-08-13
 ---
 
-# Iwd настройка wifi
+# Configuración de wifi iwd
 
-## Установка и использование iwd
+## Instalación y uso de iwd
 
 ```bash
 sudo pacman -S iwd wpa_supplicant dhclient
@@ -16,7 +16,7 @@ iwctl station wlp5s0 scan
 iwctl station wlp5s0 get-networks
 ```
 
-Учетные данные Wi-Fi хранятся в `/var/lib/iwd`, точное имя SSID следует использовать, формат: `SSID.psk`.
+Las credenciales de Wi-Fi se almacenan en `/var/lib/iwd`, se debe utilizar el SSID exacto, formatear: `SSID.psk`.
 
 ```bash
 [Security]
@@ -24,22 +24,22 @@ PreSharedKey=a2a0bf020727b1ea1c0542d16e1ccbbbab791d933e9b92783540257910a15817
 Passphrase=password
 ```
 
-Для создания зашифрованного **psk** используйте `wpa_passhrase`.
+Para crear **psk** cifrado, utilice `wpa_passhrase`.
 
 ```bash
 wpa_passphrase my_ssid password
 ```
 
-Для подключения к сети.
+Para conectarse a la red.
 
 ```bash
 iwctl station wlp5s0 connect SSID
 dhclient
 ```
 
-## Автоматическое включение wifi, при загрузке
+## Enciende automáticamente el wifi en el arranque
 
-Через сервис **systemd**, создайте скрипт для подключенияю
+A través del servicio **systemd**, cree un script para conectarse
 
 ```bash
 sudo nano /usr/local/wifi.sh
@@ -51,7 +51,7 @@ iwctl station wlan0 connect "My SSID"
 dhclient
 ```
 
-Создайте сервис systemd,
+Crea un servicio systemd,
 
 ```bash
 sudo nano /etc/systemd/system/wifi.service
@@ -69,7 +69,7 @@ ExecStart=/usr/local/wifi.sh
 WantedBy=default.target
 ```
 
-## Назначение прав и включение сервиса
+## Asignar derechos y habilitar el servicio
 
 ```bash
 chmod 744 /usr/local/wifi.sh

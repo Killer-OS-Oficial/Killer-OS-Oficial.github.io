@@ -1,39 +1,36 @@
 ---
 layout: default
-title: Btrfs перенос
-description: Мануал по восстановлению Arch Linux на btrfs.
+title: Btrfs Continuar
+description: Cómo restaurar Arch Linux a btrfs.
 sidebar: 'wiki'
 prev: '/wiki/btrfs/btrfs-part1/'
 date_up: 2020-08-13
 ---
 
-# Btrfs перенос, восстановление
+# Transferencia Btrfs, recuperación
 
-<div class="responsive-container">
-  <iframe class="responsive-iframe w-full h-full top-0 left-0 border-0" src="https://www.youtube.com/embed/97ui81gWUcU" style="border:0;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
 
-## Перенос на раздел btrfs, rsync
+## Transferir a la partición btrfs, rsync
 
 ```bash
 pacman -S rsync btrfs-progs arch-install-scripts
 ```
 
-`lsblk` - подсветить все разделы что бы определиться что монтировать.
+`lsblk` - resalte todas las secciones para decidir qué montar.
 
-При необходимости разбить диск, -z говорит обнулить таблицу разделов.
+Si es necesario, particione el disco, -z dice que ponga a cero la tabla de particiones.
 
 ```bash
 cfdisk -z /dev/sda
 ```
 
-Монтируем.
+Montamos.
 
 ```bash
 mount /dev/sda6 /mnt
 ```
 
-Создадим три подтома root, домашний каталог пользователя и подтом для хранения.
+Creemos tres subvolúmenes raíz, un directorio de inicio de usuario y un subvolumen de almacenamiento.
 
 ```bash
 btrfs subvolume create /mnt/@_root
@@ -43,7 +40,7 @@ btrfs subvolume create /mnt/@_snapshots
 btrfs subvolume list /mnt
 ```
 
-Для переноса смонтируйте резервную систему и перенесите ее.
+Para transferir, monte el sistema de respaldo y transfiéralo.
 
 ```bash
 mkdir /mnt/dump
@@ -58,20 +55,20 @@ rsync -avAXHP --delete --delete-excluded --exclude={"/dev/*","/proc/*","/sys/*",
 rsync -avAXHP --delete --delete-excluded --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/lib/pacman/sync/*","/var/cache/*","/var/tmp/*","/boot/*","/home/*"} /mnt/dump/@home/* /mnt/@_home/
 ```
 
-И отмонтируем корень ФС.
+Y desmonte la raíz FS.
 
 ```bash
 umount /mnt
 rm -rf /mnt/dump
 ```
 
-Чтобы монтировать подтом подобно обычному разделу диска, команде mount нужно указывать опцию subvol=PATH. PATH - путь относительно корня ФС. Монтируем корень. Сжатие zstd, или lzo.
+Para montar un subvolumen como una partición de disco normal, el comando de montaje debe especificar la opción subvol=PATH. PATH: ruta relativa a la raíz FS. Monte la raíz. Compresión zstd o lzo.
 
 ```bash
 mount -o subvol=@,compress=zstd /dev/sda6 /mnt
 ```
 
-Какие рекомендуемые варианты для установки на SD-карту, или медленный SSD-накопитель? В `/etc/fstab` См. https://wiki.debian.org/Btrfs.
+¿Cuáles son las opciones recomendadas para instalar en una tarjeta SD o una unidad SSD lenta? en `/etc/fstab` . https://wiki.debian.org/Btrfs.
 
 ```bash
 /dev/sdaX / btrfs x-systemd.device-timeout=0,noatime,compress=lzo,commit=0,ssd_spread,autodefrag 0 0
@@ -79,15 +76,15 @@ mount -o subvol=@,compress=zstd /dev/sda6 /mnt
 UUID=<the_device_uuid> /mount/point/ btrfs noauto,compress=lzo,noatime,autodefrag 0 0
 ```
 
-Создаём директорию и монтируем в неё наш будущий каталог пользователей, если boot раздел отдеольно, нужно его тоже смонтироват в `/mnt/boot`.
+Creamos un directorio y montamos nuestro directorio de usuario futuro en él, si la partición de arranque está separada, debe montarlo en `/mnt/boot`.
 
-Если нужно `mkdir /mnt/home`.
+Si es necesario`mkdir /mnt/home`.
 
 ```bash
 mount -o subvol=@home,compress=zstd /dev/sda6 /mnt/home
 ```
 
-Если нужно `mkdir /mnt/snapshots`.
+Si es necesario `mkdir /mnt/snapshots`.
 
 ```bash
 mount -o subvol=@snapshots,compress=zstd /dev/sda6 /mnt/snapshots
@@ -101,46 +98,46 @@ cp -L /etc/resolv.conf /mnt/etc
 swapon /dev/sda3
 ```
 
-Начиная с ядра 5.0 можно создать swap-файл, swap-файл должен располагаться целиком на одном устройстве, создаваться с отключенным COW и сжатием.
+A partir del kernel 5.0, puede crear un archivo de intercambio, el archivo de intercambio debe estar ubicado completamente en un dispositivo, creado con COW deshabilitado y compresión.
 
 ```bash
-touch /swap             # создаем пустой файл /swap
-chmod go-r /swap        # swap должен иметь права 600
-chattr +C /swap         # отключаем COW, сжатие тоже отключается
-fallocate /swap -l4g    # файл 4Gb
+touch /swap             # crear un archivo /swap
+chmod go-r /swap        # el intercambio debe ser 600
+chattr +C /swap         # apagar COW, la compresión también se apaga
+fallocate /swap -l4g    # Archivo 4Gb
 mkswap /swap
 swapon /swap
 ```
 
-Теперь нужно проинициализировать систему. Редактируем FSTAB, или запускаем genfstab.
+Ahora necesitamos inicializar el sistema. Edite FSTAB o ejecute genfstab.
 
 ```bash
 rm /mnt/etc/fstab
 genfstab -pU /mnt > /mnt/etc/fstab
 ```
 
-Переходим в нашу новую систему.
+Vayamos a nuestro nuevo sistema.
 
 ```bash
 chroot /mnt /bin/bash
 ```
 
-Генерация initramfs с помощью mkinicpio.
+Generando initramfs con mkinicpio.
 
 ```bash
 mkinitcpio -p linux
 ```
 
-Установить загрузчик GRUB2 и сконфигурировать его.
+Instale el cargador de arranque GRUB2 y configúrelo.
 
 ```bash
 grub-install /dev/sdХ
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-`exit` или "Ctrl + D" выйти из chroot.
+`exit` o "Ctrl + D" para salir de chroot.
 
-Теперь  нужно все размонтировать.
+Ahora necesitas desmontar todo.
 
 ```bash
 umount /mnt/home
@@ -151,29 +148,29 @@ reeboot
 
 ---
 
-## Снапшот на другой раздел/диск
+## Instantánea a otra partición/disco
 
 - [Incremental_Backup](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup)
 - [btrfs-sxbackup](https://github.com/masc3d/btrfs-sxbackup)
 - [btrfs-snapshot](https://github.com/YHNdnzj/btrfs-snapshot)
 
-Монтируем основной раздел.
+Montamos la sección principal.
 
 ```bash
 mkdir /mnt/arch
 mount /dev/sda6 /mnt/arch
 ```
 
-Монтируем раздел/диск для сброса снапшота.
+Monte la partición/disco para volcar la instantánea.
 
 ```bash
 mkdir /mnt/dump
 mount /dev/sda8 /mnt/dump
 ```
 
-Нужно создавать снапшоты, только для чтения(readonly), требует `send`. Для отправки на другие узлы.
+Es necesario crear instantáneas, solo lectura, requiere `enviar`. Para enviar a otros nodos.
 
-> Сбрасываем все из кэша на диск `sync`, ВАЖНО.
+> Volcamos todo, desde la caché hasta el disco `sync`, IMPORTANTE.
 
 ```bash
 btrfs subvolume snapshot -r /mnt/arch/@ /mnt/arch/@_BACKUP
@@ -182,14 +179,14 @@ btrfs subvolume snapshot -r /mnt/arch/@home /mnt/arch/@home_BACKUP
 sync
 ```
 
-Переносим снапшоты. Можно send в файл `btrfs send /mnt/arch/@_BACKUP -f /dump.sn`, receive из файла `btrfs receive /mnt/dump/ -f /dump.sn`.
+Transferimos instantáneas. Puede enviar a archivo`btrfs send /mnt/arch/@_BACKUP -f /dump.sn`, recibir de archivo`btrfs receive /mnt/dump/ -f /dump.sn`.
 
 ```bash
 btrfs send /mnt/arch/@_BACKUP | btrfs receive /mnt/dump/
 btrfs send /mnt/arch/@home_BACKUP | btrfs receive /mnt/dump/
 ```
 
-Инкрементальные readonly снимки.
+Instantáneas incrementales de solo lectura.
 
 ```bash
 btrfs subvolume snapshot -r /mnt/arch/@ /mnt/arch/@_BACKUP_new
@@ -198,25 +195,25 @@ btrfs subvolume snapshot -r /mnt/arch/@home /mnt/arch/@home_BACKUP_new
 sync
 ```
 
-Создаём разность между снимками.
+Crea una diferencia entre las imágenes.
 
 ```bash
 btrfs send -p /mnt/arch/@_BACKUP /mnt/arch/@_BACKUP_new | btrfs receive /mnt/dump/
 btrfs send -p /mnt/arch/@home_BACKUP /mnt/arch/@home_BACKUP_new | btrfs receive /mnt/dump/
 ```
 
-Просмотрим листинг.
+Echemos un vistazo a la lista.
 
 ```bash
 btrfs subvolume list /mnt/dump
 ```
 
-### Отправка по ssh
+### Envío de SSH
 
-Локально: генерируем ключи, создаём `~/.ssh/config`.
+Localmente: generar claves, crear `~/.ssh/config`.
 
 ```bash
-# генерация пары ключий, публичный(отправляем на сервер)
+# generación de un par de claves, públicas (enviar al servidor)
 # id_rsa.pub
 ssh-keygen -t rsa -b 4096 -C "lol@gmail.com"
 
@@ -228,19 +225,19 @@ Host office
 ```
 
 ```bash
-PasswordAuthentication yes                 # на сервере /etc/ssh/sshd_config
+PasswordAuthentication yes                 # en el servidor /etc/ssh/sshd_config
 systemctl restart sshd
-ssh-copy-id -i ~/.ssh/id_rsa.pub office    # отправка ключа на сервер
-# на сервере /etc/ssh/sshd_config
+ssh-copy-id -i ~/.ssh/id_rsa.pub office    # enviando la clave al servidor
+# en el servidor /etc/ssh/sshd_config
 PermitRootLogin no
-PasswordAuthentication no                  # отключим доступ по паролю, всем.
+PasswordAuthentication no                  # deshabilitar el acceso con contraseña, todos.
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 systemctl restart sshd
 systemctl enable sshd
 
 btrfs send /mnt/arch/@_BACKUP | ssh office "btrfs receive /mnt/backups"
-# или
+# o
 btrfs send /mnt/arch/@_BACKUP | ssh -p 22 test@192.168.100.51 "btrfs receive /mnt/backups"
 ```
 
@@ -248,72 +245,72 @@ btrfs send /mnt/arch/@_BACKUP | ssh -p 22 test@192.168.100.51 "btrfs receive /mn
 
 ```bash
 #!/bin/bash
-# точки монтирования
+# puntos de montaje
 src=$(mktemp -d "${TMPDIR:-/tmp/}$(basename 0).XXXXXXXXXXXX")
 dst=$(mktemp -d "${TMPDIR:-/tmp/}$(basename 0).XXXXXXXXXXXX")
-#монтируем
+# montamos
 mount /dev/sda2 $src
 mount /dev/sdb2 $dst
 if [ -e $src/root_BCKP ]
-then # первый запуск полный бекап
-  # Создаем снимок read-only
+then # primer lanzamiento de copia de seguridad completa
+  # Crea una instantánea de solo lectura
   btrfs subvolume snapshot -r $src/@ $src/root_BCKP
   sync
-  # переносим
+  # Continuar
   btrfs send $src/root_BCKP | btrfs receive $dst/
-else # повторный запуск, инкрементальный
-  # Переименовываем
+else # reiniciar, incremental
+  # Rebautizar
   mv $src/root_BCKP $src/root_BCKP_prev
   mv $dst/root_BCKP $dst/root_BCKP_prev
-  # Создаем текущий
+  # Crea la corriente
   btrfs subvolume snapshot -r $src/@ $src/root_BACKUP
   sync
-  # инкрементальный бекап
+  # respaldo incremental
   btrfs send -p $src/root_BCKP_prev $src/root_BACKUP | btrfs receive $dst/
 fi
-# В $dst/root_BACKUP копия корня.
+# en $dst/root_BACKUP copia de la raíz.
 umount $src
 umount $dst
-# Удаляем точки монтирования
+# Eliminar puntos de montaje
 rmdir $src
 rmdir $dst
 ```
 
-> Всё это работает и в обратном порядке.
+> Todo funciona al revés también.
 
-Удаляем или переименовываем `mv`.
+Eliminar o cambiar el nombre `mv`.
 
 ```bash
 btrfs subvolume delete /mnt/dump/@_BACKUP
 btrfs subvolume delete /mnt/dump/@home_BACKUP
 ```
 
-Переименовываем новые snapshot(ы).
+Cambie el nombre de las nuevas instantáneas.
 
 ```bash
 mv /mnt/dump/@_BACKUP_new /mnt/dump/@
 mv /mnt/dump/@home_BACKUP_new /mnt/dump/@home
 ```
 
-> Свойства. Сейчас они в ro - read-only(только чтение), изменим на rw - read-write(чтение-завись). Значения изменяются так: `ro true`, `ro false`.
+> Propiedades. Ahora están en ro - solo lectura (solo lectura), cambian a rw - lectura-escritura (lectura-escritura). Los valores cambian así: `ro true`,` ro false`.
 
 ```bash
-btrfs property get /mnt/dump/@        # посмотр свойств
+btrfs property get /mnt/dump/@        # ver propiedades
 
 btrfs property set /mnt/dump/@ ro false
 btrfs property set /mnt/dump/@home ro false
 
-btrfs subvolume show /mnt/dump/@      # информация
+btrfs subvolume show /mnt/dump/@      # información
 ```
 
-Удаляем, если нужно.
+Eliminar si es necesario.
 
 ```bash
 btrfs subvolume delete /mnt/arch/@_BACKUP
 btrfs subvolume delete /mnt/arch/@home_BACKUP
 ```
 
-Отмонтируем.
+Desmontar.
 
 ```bash
 umount /mnt/arch
@@ -322,9 +319,9 @@ umount /mnt/dump
 rmdir /mnt/{arch,dump}
 ```
 
-> Восстановление, как и выше, грузимся с live-usb, или с другой системы. Монтируем раздел для восстановления, поврежденный и раздел с backup, восстанавливаем снапшоты.
+> La recuperación, como arriba, se carga desde live-usb o desde otro sistema. Monte la partición para recuperación, la dañada y la partición con copia de seguridad, restaure instantáneas.
 
-Монтируем файловую систему, для пересоздания fstab и инициализации.
+Monte el sistema de archivos para reconstruir fstab e inicializar.
 
 ```bash
 mount -o subvol=@,compress=zstd /dev/sda8 /mnt
@@ -332,7 +329,7 @@ ls /mnt
 mount -o subvol=@home,compress=zstd /dev/sda8 /mnt/home
 ```
 
-Если boot раздел отдеольно, то нужно его тоже смонтироват в /mnt/boot и все другие subvolume.
+Si la partición de arranque está separada, entonces debe montarla en /mnt/boot y en todos los demás subvolúmenes.
 
 ```bash
 mount /dev/sda2 /mnt/boot
@@ -346,18 +343,18 @@ cp -L /etc/resolv.conf /mnt/etc
 swapon /dev/sda3
 ```
 
-Начиная с ядра 5.0 можно создать swap-файл, swap-файл должен располагаться целиком на одном устройстве, создаваться с отключенным COW и сжатием.
+A partir del kernel 5.0, puede crear un archivo de intercambio, el archivo de intercambio debe estar ubicado completamente en un dispositivo, creado con COW deshabilitado y compresión.
 
 ```bash
-touch /swap             # создаем пустой файл /swap
-chmod go-r /swap        # swap должен иметь права 600
-chattr +C /swap         # отключаем COW, сжатие тоже отключается
-fallocate /swap -l4g    # файл 4Gb
+touch /swap             # crear un archivo vacío/swap
+chmod go-r /swap        # el intercambio debe ser 600
+chattr +C /swap         # apagar COW, la compresión también se apaga
+fallocate /swap -l4g    # Archivo 4Gb
 mkswap /swap
 swapon /swap
 ```
 
-Редактируем FSTAB, или запускаем genfstab.
+Edite FSTAB o ejecute genfstab.
 
 ```bash
 rm /mnt/etc/fstab
@@ -366,44 +363,43 @@ genfstab -pU /mnt > /mnt/etc/fstab
 nano /mnt/etc/fstab
 ```
 
-Переходим в нашу новую систему.
+Vayamos a nuestro nuevo sistema.
 
 ```bash
 chroot /mnt
 ```
 
-Или zsh.
+O zsh.
 
 ```bash
 chroot /mnt /bin/zsh
 ```
 
-Перегенерироваь.
+Regenerado.
 
 ```bash
 mkinitcpio -p linux
 ```
 
-Установить загрузчик GRUB2 и сконфигурировать его.
+Instale el cargador de arranque GRUB2 y configúrelo.
 
 ```bash
 grub-install /dev/sdХ
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Инициализируем ключи и обновим, если требуется.
+Inicializamos las claves y las actualizamos si es necesario.
 
 ```bash
 pacman-key --init && pacman-key --populate && pacman-key --refresh-keys && pacman -Syy
 ```
 
-`exit` или "Ctrl + D" выйти из chroot.
+`exit` o "Ctrl + D" para salir de chroot.
 
-Теперь  нужно все размонтировать.
+Ahora necesitas desmontar todo.
 
 ```bash
 umount -R /mnt
 reeboot
 ```
 
-> Ещё больше разжёвано на [ubuntu.ru/wiki](https://help.ubuntu.ru/wiki/btrfs).

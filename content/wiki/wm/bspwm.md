@@ -1,24 +1,22 @@
 ---
-title: Ctlos Bspwm
-description: Описание конфигурации Ctlos Linux Bspwm, горячие клавиши, утилиты.
+title: Killer-OS Bspwm
+description: Descripción de la configuración de Killer-OS Linux Bspwm, teclas de acceso rápido, utilidades.
 sidebar: 'wiki'
 date_up: 2020-09-02
 ---
 
-# Ctlos Linux Bspwm 0.3.1
+# Killer-OS Linux Bspwm 1.0 Beta
 
-Автор: Alex Creio [@cretm](https://t.me/cretm).
+Autor: Killer-Hacker-Oficial [@Killer-hacker-Oficial](https://).
 
 ![Bspwm](../images/wm/bspwm010.png)
 
-[Demo Video](https://www.youtube.com/watch?v=INOtQJ_yZE4).
+## Descargar imagen iso
 
-## Скачать iso образ
+- Descargar [Killer-OS Bspwm](/get)
+- Descripción de la versión [changelog/bspwm](/wiki/changelog/bspwm-0-3-1)
 
-- Скачать [Ctlos Bspwm](/get)
-- Описание Релиза [changelog/bspwm](/wiki/changelog/bspwm-0-3-1)
-
-Для установки левый верхний лаунчер на панели, правый клик - установщик в меню. По левому клику в rofi набрать `calamares` Enter.
+Para instalar, el lanzador superior izquierdo en el panel, haga clic derecho - el instalador en el menú. Haga clic izquierdo en rofi y escriba `calamares` Enter.
 
 > Рекомендации после установки [next-install](https://Killer-OS-Oficial.github.io/wiki/install/next-install/).
 

@@ -28,15 +28,15 @@ module.exports = {
       {
         name: 'wiki',
         sections: [
-          //{
-          //  title: 'comenzando',
-          //  items: [
-          //    '/wiki/install/install-ctlos/',
-          //    '/wiki/install/next-install/',
-          //    '/wiki/install/pkg-manager/',
-          //    '/wiki/install/ctlos-repo/',
-          // ]
-          // },
+            {
+            title: 'comenzando',
+            items: [
+              '/wiki/install/install-ctlos/',
+              '/wiki/install/next-install/',
+              '/wiki/install/pkg-manager/',
+              '/wiki/install/ctlos-repo/',
+           ]
+           },
           {
             title: 'Apoyo',
             items: [
@@ -45,47 +45,47 @@ module.exports = {
               '/wiki/backup/netcat/',
             ]
           },
-          //{
-          //  title: 'Administradores de ventanas',
-          //  items: [
-          //    '/wiki/wm/bspwm/',
-          //  ]
-          //},
-          //{
-          //  title: 'Programas',
-          //  items: [
-          //    '/wiki/packages/other-pkg/',
-          //    '/wiki/packages/iwd/',
-          //  ]
-          //},
-          //{
-          //  title: 'Configurando',
-          //  items: [
-          //    '/wiki/config/videocfg/',
-          //    '/wiki/config/recomend/',
-          //    '/wiki/config/trouble/',
-          //    '/wiki/config/autologin/',
-          //    '/wiki/config/ssh/',
-          //  ]
-          //},
+          {
+            title: 'BSPWM',
+            items: [
+              '/wiki/wm/bspwm/',
+            ]
+          },
+          {
+            title: 'Programas',
+            items: [
+              '/wiki/packages/other-pkg/',
+              '/wiki/packages/iwd/',
+            ]
+          },
+          {
+            title: 'Configurando',
+            items: [
+              '/wiki/config/videocfg/',
+              '/wiki/config/recomend/',
+              '/wiki/config/trouble/',
+              '/wiki/config/autologin/',
+              '/wiki/config/ssh/',
+            ]
+          },
           {
             title: 'Btrfs',
             items: [
               '/wiki/btrfs/btrfs-part1/',
-             // '/wiki/btrfs/btrfs-part2/',
+              '/wiki/btrfs/btrfs-part2/',
             ]
           },
-          //{
-          //  title: 'Otro',
-          //  items: [
-          //    '/wiki/other/notes/',
-          //    '/wiki/other/gnupg/',
-          //    '/wiki/other/grub-uefi/',
-          //    '/wiki/other/screencast/',
-          //    '/wiki/other/git-start/',
-          //    '/wiki/other/ctlosiso/',
-           // ]
-          //}
+          {
+            title: 'Otro',
+            items: [
+              '/wiki/other/notes/',
+              '/wiki/other/gnupg/',
+              '/wiki/other/grub-uefi/',
+              '/wiki/other/screencast/',
+              '/wiki/other/git-start/',
+              '/wiki/other/ctlosiso/',
+           ]
+          }
         ]
       },
       {
@@ -99,24 +99,7 @@ module.exports = {
           },
           {
             items: [
-             // '/wiki/changelog/bspwm-0-3-1/',
-             // '/wiki/changelog/xfce-1-8-0/',
-             // '/wiki/changelog/openbox-1-3-0/',
-             // '/wiki/changelog/bspwm-0-1-0/',
-             // '/wiki/changelog/xfce-1-6-0/',
-             // '/wiki/changelog/openbox-1-2-0/',
-             // '/wiki/changelog/i3-1-0-0/',
-             // '/wiki/changelog/xfce-1-5-0/',
-             // '/wiki/changelog/xfce-1-4-0/',
-             // '/wiki/changelog/bspwm-0-0-1/',
-             // '/wiki/changelog/openbox-2-2/',
-             // '/wiki/changelog/xfce-1-3-0/',
-             // '/wiki/changelog/openbox-2-1/',
-             // '/wiki/changelog/xfce-1-2-0/',
-             // '/wiki/changelog/xfce-1-1-0/',
-             // '/wiki/changelog/openbox-2-0-0/',
-             // '/wiki/changelog/openbox-1-0-0/',
-             // '/wiki/changelog/xfce-1-0-0/',
+              '/wiki/changelog/bspwm-1-0/',
             ]
           }
         ]
