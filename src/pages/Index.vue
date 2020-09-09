@@ -26,12 +26,12 @@
               >
               Descargar
               </g-link>
-              <g-link
+              <!--<g-link
                 to="/wiki/install/install-ctlos"
                 class="flex items-center px-6 py-4 ml-4 text-xl font-bold leading-none bg-transparent hover:bg-ui-primary border-ui-primary hover:text-white border rounded-lg shadow-lg transition-all duration-200 ease-out transform hover:shadow-xl hover:-translate-y-1"
               >
               Instalación
-              </g-link>
+              </g-link>-->
             </div>
           </div>
 
@@ -76,7 +76,7 @@
               <li><a class="text-ui-primary border-ui-primary transition-all border-b border-dashed" target="_blank" href="https://t.me/killer_OS_Info">Telegram</a></li>
               <li><a class="text-ui-primary border-ui-primary transition-all border-b border-dashed" target="_blank" href="https://keybase.io/killerhacker">Keybase</a></li>
               <li><a class="text-ui-primary border-ui-primary transition-all border-b border-dashed" target="_blank" href="https://github.com/Killer-OS-Oficial">Github</a></li>
-            </ul>>
+            </ul>
             <p class="text-2xl">Email</p>
             <p><a class="text-ui-primary border-ui-primary transition-all border-b border-dashed" href="mailto:killer_hacker_oficial_98@protonmail.com">killer_hacker_oficial_98@protonmail.com</a></p>
           </div>

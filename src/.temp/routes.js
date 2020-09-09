@@ -17,10 +17,6 @@ export default [
     component: c1
   },
   {
-    path: "/wiki/install/pkg-manager/",
-    component: c1
-  },
-  {
     path: "/wiki/config/videocfg/",
     component: c1
   },
@@ -30,10 +26,6 @@ export default [
   },
   {
     path: "/wiki/wm/bspwm/",
-    component: c1
-  },
-  {
-    path: "/wiki/install/next-install/",
     component: c1
   },
   {
@@ -69,23 +61,11 @@ export default [
     component: c1
   },
   {
-    path: "/wiki/install/install-ctlos/",
-    component: c1
-  },
-  {
     path: "/wiki/backup/netcat/",
     component: c1
   },
   {
-    path: "/wiki/install/ctlos-repo/",
-    component: c1
-  },
-  {
     path: "/wiki/changelog/bspwm-1-0/",
-    component: c1
-  },
-  {
-    path: "/wiki/changelog/default/",
     component: c1
   },
   {

@@ -97,7 +97,7 @@ sudo pacman -S steam ttf-liberation lib32-alsa-plugins lib32-curl
 
 [wiki.archlinux.org](https://wiki.archlinux.org/index.php/Steam).
 
-O instala Steam a través de [Flatpak](/wiki/1install/pkg-manager/#еще-один-из-немногих-иенеджеров-flatpak).
+O instala Steam a través de [Flatpak](#).
 
 ---
 

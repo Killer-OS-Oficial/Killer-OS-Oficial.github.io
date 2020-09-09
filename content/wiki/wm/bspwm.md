@@ -14,164 +14,162 @@ Autor: Killer-Hacker-Oficial [@Killer-hacker-Oficial](https://).
 ## Descargar imagen iso
 
 - Descargar [Killer-OS Bspwm](/get)
-- Descripción de la versión [changelog/bspwm](/wiki/changelog/bspwm-0-3-1)
+- Descripción de la versión [changelog/bspwm](/wiki/changelog/bspwm-1-0)
 
 Para instalar, el lanzador superior izquierdo en el panel, haga clic derecho - el instalador en el menú. Haga clic izquierdo en rofi y escriba `calamares` Enter.
 
-> Рекомендации после установки [next-install](https://Killer-OS-Oficial.github.io/wiki/install/next-install/).
+> Recomendaciones posteriores a la instalación [next-install](#).
 
-Исходники: [bspwm ветка](https://github.com/ctlos/ctlosiso/tree/v0.1.0-bdsm).
+Código fuente: [BSPWM](https://github.com/Killer-OS-Oficial/Killer-OS).
 
-## Оформление
+## Registro
 
-- Тема gtk: модификация Qogir.
-- Иконки: Qogir-dark, dui-ico.
-- Курсор: capitaine-cursors.
-- Шрифт: Clear Sans Medium,9 `ttf-clear-sans`.
-- Шрифт терминала: uw-ttyp0, Hack Nerd Font Mono,9 `ttf-nerd-fonts-hack-complete-git`.
+- Tema gtk: modificado de Qogir.
+- Iconos: Qogir-dark, dui-ico.
+- Cursor: capitaine-cursors.
+- Fuente: Clear Sans Medium,9 `ttf-clear-sans`.
+- Fuente terminal: uw-ttyp0, Hack Nerd Font Mono,9 `ttf-nerd-fonts-hack-complete-git`.
 
-## Панели
+## Paneles
 
-### Верхний бар, polybar
+### Barra superior, polybar
 
-Элементы:
+Los elementos:
 
-- Запуск меню: левый клик - rofi, правый клик - jgmenu.
-- Urxvt с сессией tmux. Сессия сохраняется, при закрытии и восстанавливается, при следующем нажатии.
-- Newsboat - rss читалка.
-- Монитор cpu и ram.
-- Доступные обновления, клик: pacui - псевдо графический менеджер пакетов.
-- Рабочие столы (теги).
-- Сервис tor. Включить левый клик, выключить правый.
-- Music контроллер mpd.
-- Звук по скроллу, клик - выкл.
-- Дата. Лклик - подробней, Пклик - календарь.
-- Раскладка.
-- Меню выхода.
+- Lanzamiento del menú: click izquierdo - rofi, botón derecho del ratón - jgmenu.
+- Urxvt con sesión tmux. La sesión se guarda cuando se cierra y se restaura la próxima vez que se presiona.
+- Newsboat - lector de rss.
+- Supervise la CPU y la RAM.
+- Actualizaciones disponibles, haga clic en: pacui - administrador de paquetes pseudo gráfico.
+- Escritorios (etiquetas).
+- Servicio de Tor. Habilite el clic izquierdo, deshabilite el derecho.
+- Controlador de música mpd.
+- Sonido de desplazamiento, haga clic en apagado.
+- Fecha. Haga clic izquierdo - más detalles, haga clic derecho - calendario.
+- Selección de teclado.
+- Menú de salida.
 
-### Нижний бар - трей, tint2
+### Barra inferior: bandeja, tinte2
 
-Name | Описание
+Nombre | Descripción 
 --- | ---
-udiskie | монтирование usb.
-redshift-gtk | цветовой тон экрана.
-xfce4-power-manager | менеджер питания.
-parcellite | менеджер буфера обмена. `ctrl+alt+h` открыть историю.
+udiskie | montaje usb. 
+redshift-gtk | tono de color de la pantalla. 
+xfce4-power-manager | administrador de alimentación.                               
+parcellite | administrador del portapapeles. `ctrl + alt + h` abrir historial. 
 
-## Горячие клавиши
+## Teclas de acceso rápido
 
-Очень многое переопределено, но никто не мешает использовать дефолт, [sxhkdrc](https://github.com/baskerville/bspwm/blob/master/examples/sxhkdrc).
+Se han predefinido muchas cosas, pero nadie se molesta en usar el predeterminado, [sxhkdrc](https://github.com/baskerville/bspwm/blob/master/examples/sxhkdrc).
 
-## Режимы и управление окнами
+## Gestión de modos y ventanas
 
-- Режим тайлинга tiled, плитка.
-- Режим pseudo_tiled, псевдо тайлинг. Нечто среднее между floating и tiled.
-- Режим floating, плавающий режим.
-- Режим fullscreen, Весь экран.
-- Режим monocle, окно занимает всё доступное пространство.
+- Modo mosaico tiled
+- Modo pseudo_tiled, pseudo mosaico. Algo entre flotante y embaldosado.
+- Modo flotante.
+- Modo de pantalla completa.
+- Modo monóculo, la ventana ocupa todo el espacio disponible
 
-Зажатая `Super(win)` и клавиши мыши манипулируют окнами: резмер, положение.
+Manteniendo presionada 'Super (win)' y las teclas del mouse manipulan las ventanas: tamaño, posición.
 
-Ключ | Описание
+Combinación | Descripción 
 --- | ---
-`super + a` | Псевдо тайлинг.
-`super + s` | floating, плавающий режим.
-`super + d` | тайлинг.
-`super + f` | fullscreen.
-`super + m` | Переключение режима monocle.
-`alt + space` | Переключение режима тайлинг/floating.
-`super + g` | Приклеить окно.
-`super + z` | Закрыть окно.
-`super + -` | Скрыть/показать окно.
-`super + c` | Переход в режим monocle, отключение рамок и отступов.
-`super + v` | Отключение отступов.
-`super + {↑,↓}` | Уменьшение/увеличение отступов, `super + c` в исходное состояние.
-`super + scroll` | Уменьшение/увеличение отступов, `super + c` в исходное состояние.
-`super + {←,→,↑,↓}` | Перемещение окна в режиме floating.
-`super + {h,j,k,l}` | перемещение по окнам в режиме tiled.
-`super + alt + {h,j,k,l}` | изменение размера в режиме tiled.
-`super + shift + {h,j,k,l}` | перетаскивание в режиме tiled.
-`alt + tab` | Переключение окна на текущем теге.
-`super + tab` | Переключение на предыдущий тег.
-`super + {1-9,0}` | Переход на тег.
-`super + {q...o,0}` | Переход на тег.
-`super + alt + {←,→}` | Перемещение по тегам.
-`super + alt + {1-9,0}` | Отправка окна на номер тега.
-`super + ctrl + p` | Скрыть/показать polybar.
+`super + a` | Pseudo mosaico. 
+`super + s` | modo flotante, flotante. 
+`super + d` | mosaico. 
+`super + f` | pantalla completa. 
+`super + m` | Alternar modo monóculo. 
+`alt + space` | Alternar modo mosaico/flotante. 
+`super + g` | Pega la ventana. 
+`super + z` | Cierra una ventana. 
+`super + -` | Ocultar/mostrar ventana. 
+`super + c` | Cambie al modo monóculo, desactive los bordes y las sangrías. 
+`super + v` | Desactiva la sangría. 
+`super + {↑,↓}` | Disminuir/aumentar sangrías, `super + c` al estado original. 
+`super + scroll` | Disminuir / aumentar sangrías, `super + c` al estado original. 
+`super + {←,→,↑,↓}` | Moviendo la ventana en modo flotante. 
+`super + {h,j,k,l}` | moverse a través de ventanas en modo de mosaico. 
+`super + alt + {h,j,k,l}` | cambiar el tamaño en modo mosaico. 
+`super + shift + {h,j,k,l}` | arrastrando en modo mosaico. 
+`alt + tab` | Cambiar ventana a la etiqueta actual. 
+`super + tab` | Cambia a la etiqueta anterior. 
+`super + {1-9,0}` | Ir a la etiqueta (escritorio). 
+`super + {q....p}` | Ir a la etiqueta (escritorio). 
+`super + alt + {←,→}` | Moviéndose a través de etiquetas (escritorio). 
+`super + alt + {1-9,0}` | Enviar ventana al número de etiqueta (escritorio). 
+`super + ctrl + p` | Ocultar/mostrar polybar. 
 
-## Запуск утилит
+## Utilidades en ejecución
 
-Ключ                   | Описание
+Combinación                   | Descripción 
 --- | ---
-`alt + shift`          | Переключение раскладки.
-`super + alt + r`      | Рестарт bspwm.
-`super + alt + q`      | Выход из bspwm.
-`super + Escape`       | Релоад конфига горячих клавиш sxhkd.
-`alt + Return`         | Терминал драйвинг, задаем координаты старта, зажатым ЛКМ.
-`super + Return`       | Терминал на первом теге, в режиме тайлинга, monocle.
-`alt + t`              | Терминал в режиме floating.
-`alt + r `             | Ranger - консольный менеджер файлов.
-`alt + d `             | Rofi - меню.
+`alt + shift`          | Cambiar diseños. 
+`super + alt + r`      | Reinicie bspwm. 
+`super + alt + q`      | Salga de bspwm. 
+`super + Escape`       | Vuelva a cargar la configuración de teclas de acceso rápido sxhkd. 
+`alt + Return`         | Terminal de conducción, establezca las coordenadas de inicio manteniendo presionado. 
+`super + Return`       | Terminal en la primera etiqueta, en modo mosaico, monóculo. 
+`alt + t`              | El terminal se abre en modo flotante. 
+`alt + r `             | Ranger - administrador de archivos de la consola.            
+`alt + d `             | Rofi - menú. 
 `alt + w`              | Firefox.
 `alt + f`              | Thunar.
-`super + Delete`       | Блокировка экрана.
-`super + alt + Delete` | Меню выхода.
-`Print`                | скрин с отправкой в `~/Pictures/screen`(директория должна быть). Копируется в буфер.
-`super + Print`        | скрин в режиме выделения.
-`super + alt + Print`  | скрин с задержкой 5 сек. и отправкой в `~/Pictures/screen`(директория должна быть). Копируется в буфер.
-`super + alt + m`      | Текущий трек в ncmpcpp.
-`ctrl + alt + {c,v}`   | Копировать/вставить в терминале.
+`super + Delete`       | Bloqueo de pantalla. 
+`super + alt + Delete` | Salir del menú. 
+`Print`                | Captura de pantalla con envío a `~/Pictures/screen ` 
+`super + Print`        | pantalla en modo de selección.                               
+`super + alt + Print`  | pantalla con un retraso de 5 segundos. y enviando a `~/Pictures/screen` 
+`super + alt + m`      | Pista actual en ncmpcpp. 
+`ctrl + alt + {c,v}`   | Copiar/pegar en la terminal. 
 
-## Конфигурационные файлы
+## Archivos de configuración
 
-Путь | Описание
+Archivo | Descripción 
 --- | ---
-~/.config/bspwm/bspwmrc | Основной конфиг.
-~/.config/bspwm | Скрипты.
-/usr/bin/bspwm_start | Скрипт автостарта, редактировать от `ROOT`. Он вызывается в `~/.xinitrc` и в SDDM `/usr/share/xsessions/bspwm.desktop`.
-~/.config/sxhkd/sxhkdrc | Конфиг горячих клавиш.
-/etc/sddm.conf | Конфиг менеджера входа SDDM.
-~/.config/bspwm/polybar | Скрипты и конфиг polybar.
-~/.config/tint2/tray.tint2rc | Конфиг tint2 трей. В меню есть gui-конфигуратор (Настройки tint).
-~/.config/picom.conf | Декоратор окон, композитный менеджер.
-~/.Xresources | Конфиг Urxvt терминала. После изменения файла выполнить `xrdb -merge $HOME/.Xresources`.
-~/.colors | Палитры терминала, указывать в `~/.Xresources` строка `#include ".colors/sn"`.
-~/.zshrc | Конфиг оболочки $SHELL.
-~/.alias_zsh | Алиасы и функции zsh, сокращения команд терминала.
+~/.config/bspwm/bspwmrc | Configuración principal                                      
+~/.config/bspwm | Scripts. 
+/usr/bin/bspwm_start | Script de inicio automático, editar desde `ROOT`. Se llama en `~/.xinitrc` y en SDDM `/usr/share/xsessions/bspwm.desktop`. 
+~/.config/sxhkd/sxhkdrc | Configuración de teclas de acceso rápido.                    
+/etc/sddm.conf | Configuración del administrador de inicio de sesión SDDM. 
+~/.config/bspwm/polybar | Scripts y polybar de configuración. 
+~/.config/tint2/tray.tint2rc | Configurar bandeja tint2. Hay un configurador de interfaz gráfica de usuario en el menú (configuración de tint2). 
+~/.config/picom.conf | Decorador de ventanas.                                       
+~/.Xresources | Configuración del terminal Urxvt. Después de modificar el archivo, ejecute `xrdb -merge $HOME/.Xresources`. 
+~/.colors | Paletas de terminales, especificar en `~/.Xresources` línea `#include ".colors/killer'os"`. 
+~/.zshrc | Configuración de Shell $SHELL. 
+~/.alias_zsh | Alias y funciones de Zsh, abreviaturas de comandos de terminal. 
 
-Это основа, все остальное в `~/` и `~/.config`.
+Esta es la base, todo lo demás está en `~/` y `~/.config`.
 
-## Утилиты
+## Utilidades
 
-Name | Описание
+Nobre | Descripción 
 --- | ---
-neofetch, fetch | информация о системе. `~/.bin/fetch`.
-lxappearance, qt5ct | настройка внешнего вида.
-lxrandr | разрешение экрана.
-gotop | Консольный системный монитор.
-gufw | межсетевой экран.
-ranger, thunar | файловые менеджеры.
-fzf | инкрементальный поиск, `zz`.
-nano, micro | консольный текстовый редактор, привычные клавиши:) ctrl+s - сохранить, ctrl+q - выход и т.д.
-leafpad | Gui текстовый редактор.
-xreader | просмотр pdf.
-viewnior | просмотр изображений.
-ncmpcpp, audacious | музыкальный плеер.
-cava | визуализатор.
-mpv, smplayer | видео плеер.
-youtube-dl, straw-viewer, streamlink | скачивание, просмотр, просмотр стриминга.
-simplescreenrecorder | Запись экрана.
-flameshot | скриншоты.
-keepassxc | менеджер паролей.
-veracrypt | шифрование файлов.
-pavucontrol | управление звуком.
-file-roller | менеджер архивов.
-timeshift | резервное копирование.
-tmux | терминальный мультиплексор.
-rxrun.sh | Tmux с 3 табами. `~/.bin/rxrun.sh`.
+neofetch | información sobre el sistema. 
+lxappearance, qt5ct | personalización de apariencia.                               
+lxrandr | resolución de la pantalla.                                   
+gotop | Monitor del sistema de consola. 
+gufw | cortafuegos. 
+ranger, thunar | administradores de archivos.                                 
+fzf | búsqueda incremental, `zz`.                                  
+nano, micro | editor de texto de la consola, teclas familiares :) ctrl + s - guardar, ctrl + q - salir, etc. 
+leafpad | Editor de texto gui. 
+xreader | ver pdf. 
+viewnior | visualización de imágenes. 
+ncmpcpp, audacious | reproductor de música.                                       
+cava | visualizador. 
+mpv, smplayer | reproductor de video.                                        
+youtube-dl, straw-viewer, streamlink | descargar, ver, ver streaming. 
+simplescreenrecorder | Grabación de pantalla.                                       
+flameshot | capturas de pantalla.                                        
+keepassxc | administrador de contraseñas.                                
+veracrypt | cifrado de archivos.                                         
+pavucontrol | Control de sonido.                                           
+file-roller | administrador de archivos.                                   
+timeshift | apoyo.                                                       
+tmux | multiplexor terminal.                                        
+rxrun.sh | Tmux con 3 pestañas. `~/.bin/rxrun.sh`. 
 
-Еще скрипты: `~/.bin`.
+Más scripts: `~/.bin`.
 
-Полный список пакетов: [packages.x86_64](https://github.com/ctlos/ctlosiso/blob/v0.3.1-bdsm/packages.x86_64).
-
-Комментарии приветствуются. Вступай в telegram чат: [t.me/ctlos](https://t.me/ctlos).
+Lista completa de paquetes: [packages.x86_64](#).

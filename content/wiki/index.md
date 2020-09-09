@@ -2,7 +2,7 @@
 title: Killer-OS Linux Wiki
 description: Documentación de Killer-OS Linux
 sidebar: 'wiki'
-next: '/wiki/install/install-ctlos/'
+next: '/wiki/wm/bspwm/'
 ---
 
 # Documentación de Killer-OS Linux

@@ -28,15 +28,6 @@ module.exports = {
       {
         name: 'wiki',
         sections: [
-            {
-            title: 'comenzando',
-            items: [
-              '/wiki/install/install-ctlos/',
-              '/wiki/install/next-install/',
-              '/wiki/install/pkg-manager/',
-              '/wiki/install/ctlos-repo/',
-           ]
-           },
           {
             title: 'Apoyo',
             items: [
@@ -58,16 +49,16 @@ module.exports = {
               '/wiki/packages/iwd/',
             ]
           },
-          {
-            title: 'Configurando',
-            items: [
-              '/wiki/config/videocfg/',
-              '/wiki/config/recomend/',
-              '/wiki/config/trouble/',
-              '/wiki/config/autologin/',
-              '/wiki/config/ssh/',
-            ]
-          },
+          //{
+          //  title: 'Configurando',
+          //  items: [
+          //    '/wiki/config/videocfg/',
+          //    '/wiki/config/recomend/',
+          //    '/wiki/config/trouble/',
+          //    '/wiki/config/autologin/',
+          //    '/wiki/config/ssh/',
+          //  ]
+          //},
           {
             title: 'Btrfs',
             items: [
@@ -83,7 +74,6 @@ module.exports = {
               '/wiki/other/grub-uefi/',
               '/wiki/other/screencast/',
               '/wiki/other/git-start/',
-              '/wiki/other/ctlosiso/',
            ]
           }
         ]
