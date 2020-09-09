@@ -168,13 +168,13 @@ module.exports = {
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
-        id: (process.env.GA_ID ? process.env.GA_ID : 'UA-90439782-2')
+        id: (process.env.GA_ID ? process.env.GA_ID : '#')
       }
     },
     {
       use: 'gridsome-plugin-yandex-metrika',
       options: {
-        id: 47541358
+        id: 67192255
       }
     },
 

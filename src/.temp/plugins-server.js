@@ -14,10 +14,10 @@ export default [
   },
   {
     run: plugin_gridsome_plugin_google_analytics_9,
-    options: {"id":"UA-90439782-2"}
+    options: {"id":"#"}
   },
   {
     run: plugin_gridsome_plugin_yandex_metrika_10,
-    options: {"id":47541358}
+    options: {"id":67192255}
   }
 ]
