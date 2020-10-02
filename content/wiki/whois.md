@@ -15,7 +15,7 @@ Disponible solo para arquitectura de procesador x86-64 (64 bits).
 Fuente abierta: [github.com/Killer-OS-Oficial](https://github.com/Killer-OS-Oficial/).
 
 Descárgalo y pruébalo: [Killer-OS-Oficial.github.io/get](/get).
-[![GitHub All Releases](https://img.shields.io/github/downloads/ctlos/ctlosiso/total.svg)](/get)
+[![GitHub All Releases](https://img.shields.io/github/downloads/Killer-OS-Oficial/Killer-OS/total.svg)](/get)
 
 Últimas versiones y actualizaciones actuales [Killer-OS Changelog](/wiki/changelog).
 

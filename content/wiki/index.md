@@ -15,7 +15,7 @@ next: '/wiki/wm/bspwm/'
 [Aprende más →](/wiki/whois)
 
 ## Descargar distribución
-[![GitHub All Releases](https://img.shields.io/github/downloads/ctlos/ctlosiso/total.svg)](/get)
+[![GitHub All Releases](https://img.shields.io/github/downloads/Killer-OS-Oficial/Killer-OS/total.svg)](/get)
 
 ## Cambia la historia
 [Descubra lo que ha cambiado →](/wiki/changelog)

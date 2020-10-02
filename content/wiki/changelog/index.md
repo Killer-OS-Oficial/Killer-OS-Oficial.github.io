@@ -11,7 +11,7 @@ sidebar: 'changelog'
 
 ## Versiones
 
-> La versión mas reciente y estable se presenta en la página de descarga. [Killer-OS-Oficial.github.io/get](/get). [![GitHub All Releases](https://img.shields.io/github/downloads/ctlos/ctlosiso/total.svg)](/get)
+> La versión mas reciente y estable se presenta en la página de descarga. [Killer-OS-Oficial.github.io/get](/get). [![GitHub All Releases](https://img.shields.io/github/downloads/Killer-OS-Oficial/Killer-OS/total.svg)](/get)
 
 ## Contactos
 

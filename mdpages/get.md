@@ -16,4 +16,4 @@ Cómo comprobar sumas de comprobación e instalar. [Killer-OS-Oficial.github.io/
 
 > Espejos para descargar iso
 
-- [Github releases](#)
+- [Github releases](https://github.com/Killer-OS-Oficial/Killer-OS/releases/download/v1.0-Beta-0.1/killer-os_bspwm-beta-1.0_20201002.iso)
